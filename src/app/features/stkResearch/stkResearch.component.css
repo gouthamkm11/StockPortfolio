@@ -1,0 +1,11 @@
+table {
+    width: 1000px;
+    height: 100%;
+}
+tr{
+    width:1000px;
+}
+
+.mainDivStyle{
+    overflow: hidden;
+}

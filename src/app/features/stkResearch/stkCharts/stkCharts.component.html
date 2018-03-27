@@ -1,0 +1,25 @@
+<div style="border: solid 5px black">
+    <!-- <ul>
+        <li><a href="1m" (click)='get1m()'>1 month</a></li>
+        <li><a href="3m" (click)='get3m()'>3 Months</a></li>
+        <li><a href="1y" (click)='get1y()'>1 Year</a></li>
+        <li><a href="5y" (click)='get5y()'>5 Year</a></li>
+    </ul> -->
+    <div>
+        <button
+            (click)="get1m()"
+        >1 Month</button>
+        <button
+            (click)="get3m()"
+        >3 Months</button>
+        <button
+            (click)="get1y()"
+        >1 Year</button>
+        <button
+            (click)="get5y()"
+        >5 Years</button>
+    </div>
+    <div *ngIf="chart">
+        <canvas id='canvas'>{{chart}}</canvas>
+    </div>
+</div>
