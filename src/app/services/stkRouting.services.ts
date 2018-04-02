@@ -16,7 +16,8 @@ export class stkRoutingServices {
     }
 
     getStkStats(symbol){
-        return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/ohlc`)
+        // return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/ohlc`)
+        return this._httpClient.get(`http://127.0.0.1:3001/api/ohlc/${symbol}`)
         .map(result => result);
     }
 
