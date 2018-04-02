@@ -7,6 +7,7 @@ import { stkRoutingServices } from "../../services/stkRouting.services";
     styleUrls: ['./stkResearch.component.css'],
     providers: [stkRoutingServices]
 })
+
 export class stkResearchComponent{
     
 }
