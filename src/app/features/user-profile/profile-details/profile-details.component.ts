@@ -12,4 +12,8 @@ export class ProfileDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  profilePic:string = '';
+  firstName:string = 'Goutham Kumar';
+  lastName:string = 'Somasundaram';
+  gender:string = 'Male';
 }

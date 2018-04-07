@@ -1,0 +1,16 @@
+.profilePic {
+    border: solid 5px green;
+    margin: 5px;
+    padding: 5px;
+    float: left;
+}
+
+.tableDetails{
+    border: solid 5px green;
+    margin: 5px;
+    padding: 5px;
+}
+
+/* #divProfile {
+    float: right;
+} */

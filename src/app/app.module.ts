@@ -28,10 +28,10 @@ import { ProfileAccountDetailsComponent } from './features/user-profile/profile-
     stkChartsComponent,
     stkStatsComponent,
     stkSearchComponent,
+    UserProfileComponent,
     ProfileDetailsComponent,
     ProfileWatchlistComponent,
     ProfileAccountDetailsComponent
-    
   ],
   imports: [
     BrowserModule,

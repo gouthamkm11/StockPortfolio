@@ -12,4 +12,6 @@ export class ProfileAccountDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  buyingPower:string='Buying Power';
+  withdrawableCash:string='Withdrawable Cash';
 }
