@@ -13,6 +13,11 @@ import { stkAboutComponent } from './features/stkResearch/stkAbout/stkAbout.comp
 import { stkChartsComponent } from './features/stkresearch/stkCharts/stkCharts.component';
 import { stkStatsComponent } from './features/stkResearch/stkStats/stkStats.component';
 import { stkSearchComponent } from './features/stkResearch/stkSearch/stkSearch.component';
+//Stock Profile Components
+import { UserProfileComponent } from './features/user-profile/user-profile.component';
+import { ProfileDetailsComponent } from './features/user-profile/profile-details/profile-details.component';
+import { ProfileWatchlistComponent } from './features/user-profile/profile-watchlist/profile-watchlist.component';
+import { ProfileAccountDetailsComponent } from './features/user-profile/profile-account-details/profile-account-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +27,10 @@ import { stkSearchComponent } from './features/stkResearch/stkSearch/stkSearch.c
     stkAboutComponent,
     stkChartsComponent,
     stkStatsComponent,
-    stkSearchComponent
+    stkSearchComponent,
+    ProfileDetailsComponent,
+    ProfileWatchlistComponent,
+    ProfileAccountDetailsComponent
     
   ],
   imports: [
