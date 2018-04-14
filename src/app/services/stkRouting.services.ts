@@ -39,7 +39,9 @@ export class stkRoutingServices {
         return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/chart/5y`)
         .map(res => res);
     }
+
+    getEvery5sec(symbol){
+        return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/price`)
+        .map(res => res);
+    }
 }
-
-
-
