@@ -4,7 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
 //importing routes modules
 import {Routes, RouterModule} from '@angular/router';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//Importing material modules
+import { MatGridListModule } from '@angular/material/grid-list';
 
 //Root Component
 import { AppComponent } from './app.component';
@@ -23,6 +25,8 @@ import { stkAboutComponent } from './features/stkResearch/stkAbout/stkAbout.comp
 import { stkChartsComponent } from './features/stkresearch/stkCharts/stkCharts.component';
 import { stkStatsComponent } from './features/stkResearch/stkStats/stkStats.component';
 import { stkSearchComponent } from './features/stkResearch/stkSearch/stkSearch.component';
+import { ProfileGraphComponent } from './features/user-profile/profile-graph/profile-graph.component';
+import { ProfileStocksComponent } from './features/user-profile/profile-stocks/profile-stocks.component';
 
 
 
@@ -47,10 +51,12 @@ const appRoutes:Routes = [
     ProfileDetailsComponent,
     ProfileWatchlistComponent,
     ProfileAccountDetailsComponent,    
-    UserLoginComponent
+    UserLoginComponent, ProfileGraphComponent, ProfileStocksComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MatGridListModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes)

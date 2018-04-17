@@ -1,6 +1,15 @@
 .divContainer{
     border: solid 5px black;
-    margin-top:100px;
-    margin-left: 350px;
+    margin: 5px;
     padding: 5px;
+    float: right;
+}
+
+.mainDiv{
+    border: 5px solid black;
+    margin: 5px;
+    padding: 5px;
+    height: 150px;
+    width: 450px;
+    float: right;
 }

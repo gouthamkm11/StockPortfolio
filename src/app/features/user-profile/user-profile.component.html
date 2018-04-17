@@ -1,16 +1,17 @@
-<app-profile-details></app-profile-details>
-<div class="movedLeft">
-    <app-profile-watchlist></app-profile-watchlist>
+<div class="mainDiv">
+        <div class="profileDiv">
+                <app-profile-details></app-profile-details>
+                </div>
+            <div class="graphDiv">
+                <app-profile-graph></app-profile-graph>
+            </div>
+            <div class="accDiv">
+                    <app-profile-account-details></app-profile-account-details>
+                </div>
+            <div class="movedLeft">
+                <app-profile-watchlist></app-profile-watchlist>
+            </div>
+            <div class="movedLeft">
+                <app-profile-stocks></app-profile-stocks>
+            </div>
 </div>
-<app-profile-account-details></app-profile-account-details>
-
-
-<mat-grid-list cols="4" rowHeight="100px">
-    <mat-grid-tile
-    *ngFor="let tile of tiles"
-    [colspan]="tile.cols"
-    [rowspan]="tile.rows"
-    [style.background]="tile.color">
-    {{tile.text}}
-    </mat-grid-tile>
-</mat-grid-list>

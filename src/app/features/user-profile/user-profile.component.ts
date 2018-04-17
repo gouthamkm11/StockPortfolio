@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { userProfileServices } from '../../services/userProfile.services';
 import { userProfile } from '../../models/userProfile.model';
-import {MatGridListModule} from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-user-profile',

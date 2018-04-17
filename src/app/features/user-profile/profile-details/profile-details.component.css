@@ -5,12 +5,11 @@
     float: left;
 }
 
-.tableDetails{
-    border: solid 5px green;
-    margin: 5px;
+.mainDiv {
+    border: 5px solid black;
     padding: 5px;
+    margin: 5px;
+    width: 570px;
+    height: 150px;
+    float: left;
 }
-
-/* #divProfile {
-    float: right;
-} */

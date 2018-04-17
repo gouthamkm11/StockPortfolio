@@ -1,11 +1,13 @@
-<div class="profilePic">
-  <img [src]="profilePic" alt="profile Pic" style="height:100;width:100px">
-</div>
-
-<div id="divProfile">
-  <table class="tableDetails">
-    <tr><td>{{firstName}}</td><td>{{firstName}}</td></tr>
-    <tr><td>{{lastName}}</td><td>{{lastName}}</td></tr>
-    <tr><td>{{gender}}</td><td>{{gender}}</td></tr>
-  </table>
+<div class="mainDiv">
+    <div class="profilePic">
+        <img [src]="profilePic" alt="profile Pic" style="height:100;width:100px">
+      </div>
+      
+      <div class="profilePic">
+        <table>
+          <tr><td>NAME:</td><td>{{firstName | uppercase}}</td></tr>
+          <tr><td>GENDER:</td><td>{{gender | uppercase}}</td></tr>
+          <tr><td>PORTFOLIO VALUE:</td><td>10</td></tr>
+        </table>
+      </div>
 </div>

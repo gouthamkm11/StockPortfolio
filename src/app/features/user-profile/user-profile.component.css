@@ -1,5 +1,23 @@
 .movedLeft{
-    margin-right: 450px;
-    height: 100px;
-    width: 30%;
+    float: left;
+}
+
+.graphDiv{
+    float: left;
+}
+
+.mainDiv{
+    margin:5px;
+    border: 5px solid black;
+    float: left;
+    height: 550px;
+    max-width: 1500px;
+}
+
+.profileDiv{
+    float: left;
+}
+
+.accDiv{
+    float: left;
 }
