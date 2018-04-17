@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { stkRoutingServices } from '../../../services/stkRouting.services';
 
 
 @Component({
@@ -9,7 +8,7 @@ import { stkRoutingServices } from '../../../services/stkRouting.services';
 })
 export class ProfileWatchlistComponent implements OnInit {
 
-  constructor(private _routing:stkRoutingServices) { }
+  constructor() { }
 
   ngOnInit() {
     //this.value = this._routing.getEvery5sec(this.symbol)

@@ -27,7 +27,8 @@ import { stkSearchComponent } from './features/stkResearch/stkSearch/stkSearch.c
 
 
 const appRoutes:Routes = [
-  {path:'',component:UserProfileComponent},
+  {path:'', redirectTo: '/userLogin', pathMatch:'full'},
+  {path:'userProfile',component:UserProfileComponent},
   {path:'userLogin',component:UserLoginComponent},
   {path:'stockResearch',component:stkResearchComponent}
 ]
