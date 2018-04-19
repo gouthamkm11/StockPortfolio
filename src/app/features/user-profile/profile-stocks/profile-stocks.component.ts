@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { userProfileServices } from "../../../services/userProfile.services";
 
 @Component({
   selector: 'app-profile-stocks',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileStocksComponent implements OnInit {
 
-  constructor() { }
+  constructor(private routing:userProfileServices) { }
 
   ngOnInit() {
-  }
+    this.routing.getStkOwnedDetails().subscribe((res)=>{
 
+    })
+  }
+  
 }

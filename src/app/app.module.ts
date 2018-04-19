@@ -27,6 +27,8 @@ import { stkStatsComponent } from './features/stkResearch/stkStats/stkStats.comp
 import { stkSearchComponent } from './features/stkResearch/stkSearch/stkSearch.component';
 import { ProfileGraphComponent } from './features/user-profile/profile-graph/profile-graph.component';
 import { ProfileStocksComponent } from './features/user-profile/profile-stocks/profile-stocks.component';
+import { StockManagementComponent } from './features/stock-management/stock-management.component';
+import { WatchlistItemComponent } from './features/user-profile/profile-watchlist/watchlist-item/watchlist-item.component';
 
 
 
@@ -51,7 +53,11 @@ const appRoutes:Routes = [
     ProfileDetailsComponent,
     ProfileWatchlistComponent,
     ProfileAccountDetailsComponent,    
-    UserLoginComponent, ProfileGraphComponent, ProfileStocksComponent
+    UserLoginComponent,
+    ProfileGraphComponent,
+    ProfileStocksComponent,
+    StockManagementComponent,
+    WatchlistItemComponent
   ],
   imports: [
     BrowserModule,

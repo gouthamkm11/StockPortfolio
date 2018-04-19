@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { userProfileServices } from '../../../services/userProfile.services';
+import { stkWathclist } from '../../../models/stkWatchlist.model';
+import 'rxjs/add/operator/map';
 
 
 @Component({
@@ -8,13 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileWatchlistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _userProfileServices:userProfileServices) { }
 
+  stkList=[];
   ngOnInit() {
-    //this.value = this._routing.getEvery5sec(this.symbol)
+    this._userProfileServices.stkWatchlistEmitter.subscribe((res)=>{
+      //Here the return type is object.
+      //So use console.dir to get the root of obj structure.
+      let initial = res.stkSymbol;
+      let sizeofArray = initial.length;
+      if(sizeofArray>5)
+      {
+        this.stkList = initial.slice(0, 5);
+      }
+      else{
+        this.stkList = initial;
+      }
+    });
   }
-
-  symbol: String = 'msft';
-  value: Number = 0;
-
 }

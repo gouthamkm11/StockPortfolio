@@ -40,7 +40,7 @@ export class stkRoutingServices {
         .map(res => res);
     }
 
-    getEvery5sec(symbol){
+    getPrice(symbol){
         return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/price`)
         .map(res => res);
     }

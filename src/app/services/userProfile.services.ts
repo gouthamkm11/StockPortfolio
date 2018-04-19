@@ -18,10 +18,18 @@ export class userProfileServices {
 
     //Methods to access the angularEndpoints configured at the backend
     getProfileDetails(){
-        return this._httpClient.get('http://localhost:3001/userProfile/userDetails').map(result => result);
+        return this._httpClient.get('http://localhost:3002/api/userData').map(result => result);
     }
 
     getStkOwnedDetails(){
-        
+        return this._httpClient.get('http://localhost:3002/api/ownedData').map(result => result);
+    }
+
+    getStkWatchlistDetails(){
+        return this._httpClient.get('http://localhost:3002/api/watchlistData').map(result => result);
+    }
+
+    getAccountDetails(){
+        return this._httpClient.get('http://localhost:3002/api/accountData').map(result => result);
     }
 }

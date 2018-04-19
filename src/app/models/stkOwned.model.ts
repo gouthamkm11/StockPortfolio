@@ -1,9 +1,7 @@
 export class stkOwned{
-    public stkSymbol:String;
-    public nofShares:Number;
+    public stock:[Object]
 
-    constructor(symbol,shares){
-        this.stkSymbol = symbol;
-        this.nofShares = shares;
+    constructor(stock){
+        this.stock = stock;
     }
 }
