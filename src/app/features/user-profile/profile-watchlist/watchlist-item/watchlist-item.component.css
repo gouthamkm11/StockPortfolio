@@ -1,16 +1,18 @@
 .mainDiv{
     border: 5px solid black;
     padding: 5px;
-    margin: auto
+    float: left;
 }
 
-.firstDiv{
-    border: 5px solid blue;
-    padding: 5px;
-    margin: auto
+.tableDesign{
+    max-width: 300px;
+    float: left;
 }
 
-.secondDiv{
-    border: 5px solid green;
+.tableDiv{
+    border: solid 5px red;
+    margin: 5px;
     padding: 5px;
+    float: left;
+    height: 20px;
 }
