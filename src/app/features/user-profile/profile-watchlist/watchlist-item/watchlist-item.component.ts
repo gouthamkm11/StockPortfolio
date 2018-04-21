@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { stkWathclist } from '../../../../models/stkWatchlist.model';
 import { stkRoutingServices }  from '../../../../services/stkRouting.services'
+import { Observable } from 'rxjs';
+import { Http } from "@angular/http";
 
 
 @Component({
@@ -8,7 +10,7 @@ import { stkRoutingServices }  from '../../../../services/stkRouting.services'
   templateUrl: './watchlist-item.component.html',
   styleUrls: ['./watchlist-item.component.css']
 })
-export class WatchlistItemComponent implements OnInit {
+export class WatchlistItemComponent implements OnInit, OnChanges {
 
   constructor(private _routing:stkRoutingServices) { }
 
@@ -19,12 +21,16 @@ export class WatchlistItemComponent implements OnInit {
   ngOnInit() {
     this._routing.getPrice(this.data).subscribe((value)=>{
       this.currentPrice = value;
-    }) 
+    })
   }
 
+  ngOnChanges(){
+    
+  }
 
-  // onClickStock(){
-
+  // ngOnChanges(){
+  //   Observable.interval(1000).timeInterval()
+  //   .flatMap(()=>this._routing.getPrice(this.data))
+  //   .subscribe((value)=>this.currentPrice=value);
   // }
-
 }

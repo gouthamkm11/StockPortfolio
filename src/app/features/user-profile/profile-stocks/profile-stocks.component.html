@@ -1,3 +1,8 @@
 <div class="mainDiv">
-  <a href="#"></a>
+    <tr><th>Stocks</th><th>Shares</th><th>Value</th><th>Equity</th></tr>
+    <app-stocks-list
+      *ngFor="let item of items"
+      [data]="item"
+      >
+    </app-stocks-list>
 </div>

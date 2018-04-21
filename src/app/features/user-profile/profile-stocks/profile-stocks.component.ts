@@ -12,7 +12,7 @@ export class ProfileStocksComponent implements OnInit {
 
   ngOnInit() {
     this.routing.getStkOwnedDetails().subscribe((res)=>{
-
+      
     })
   }
   

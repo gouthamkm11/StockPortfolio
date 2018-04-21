@@ -29,8 +29,7 @@ import { ProfileGraphComponent } from './features/user-profile/profile-graph/pro
 import { ProfileStocksComponent } from './features/user-profile/profile-stocks/profile-stocks.component';
 import { StockManagementComponent } from './features/stock-management/stock-management.component';
 import { WatchlistItemComponent } from './features/user-profile/profile-watchlist/watchlist-item/watchlist-item.component';
-
-
+import { StocksListComponent } from './features/user-profile/profile-stocks/stocks-list/stocks-list.component';
 
 const appRoutes:Routes = [
   {path:'', redirectTo: '/userLogin', pathMatch:'full'},
@@ -57,7 +56,8 @@ const appRoutes:Routes = [
     ProfileGraphComponent,
     ProfileStocksComponent,
     StockManagementComponent,
-    WatchlistItemComponent
+    WatchlistItemComponent,
+    StocksListComponent
   ],
   imports: [
     BrowserModule,
