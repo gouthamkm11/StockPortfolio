@@ -12,6 +12,7 @@
     float: left;
     height: 550px;
     max-width: 1500px;
+    overflow: hidden;
 }
 
 .profileDiv{
