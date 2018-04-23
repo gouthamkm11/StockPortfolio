@@ -19,8 +19,10 @@ export class stkSearchComponent implements OnInit {
   ) { }
 
   symbol:string;
+  //To access watchlist stock symbols
   list;
   watchlistSymbols;
+  //
 
   ngOnInit() {
   }
@@ -49,5 +51,19 @@ export class stkSearchComponent implements OnInit {
       }
       else {console.log("stock exits")};
     });
+  }
+
+
+  //input the stock symbol
+  //input the no of shares
+  addToStocksOwned(){
+    //1.Does the user has enough funds to buy the total stock value?
+    // stockvalue to purchase = stock price * no of shares.
+    // compare the stockvalue with portfolio value. if portfolio value >= stock value do purchase else reject the request
+    //2. User has enough funds to purchase the stock.
+    //This has two case
+    //1. Does the user already have the stock 2. First time purchase
+    //Case1:(Yes) Add the user entered no.of.share values to the symbol with the existing share value.(previous stock value + user entered stock value)
+    //Case2:Add the user entered stock and shares value to the table.
   }
 }
