@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { stkOwned } from '../../../../models/stkOwned.model'
 
 @Component({
   selector: 'app-stocks-list',
@@ -8,13 +9,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class StocksListComponent implements OnInit {
 
   @Input() data;
-  stocks;
+  stock;
   equity;
   value;
   shares;
   constructor() { }
   ngOnInit() {
+    this.stock = this.data.stock;
+    this.shares = this.data.shares;
     
   }
-
 }

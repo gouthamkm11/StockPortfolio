@@ -1,8 +1,8 @@
 <div class="mainDiv">
     <tr><th>Stocks</th><th>Shares</th><th>Value</th><th>Equity</th></tr>
     <app-stocks-list
-      *ngFor="let item of items"
-      [data]="item"
+      *ngFor="let stk of stks"
+      [data]="stk"
       >
     </app-stocks-list>
 </div>

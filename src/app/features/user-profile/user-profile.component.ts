@@ -22,7 +22,7 @@ export class UserProfileComponent implements OnInit {
 
   //Below two will get the account details
   userStocks;
-  userOwnedstkDetails;//This model has current users owned stocks
+  userOwnedstkDetails: stkOwned;//This model has current users owned stocks
 
   //Below two will get the account details
   userWatchlist;
@@ -38,20 +38,20 @@ export class UserProfileComponent implements OnInit {
       this.routing.profileDetailsEmitter.emit(this.userProfileDetails);
     });
     
-    //This method will fetch stocks owned by user from mongoDB
-    // this.routing.getStkOwnedDetails().subscribe((res)=>{
-    //   this.userWatchlist = res;
-    //   console.log(`user owned stock details${this.userWatchlist}`);
-    //   this.userWathcliststkDetails = new stkOwned(this.userWatchlist.stocks);
-    //   this.routing.stkOwnedEmitter.emit(this.userOwnedstkDetails);
-    // });
-
-    //This method will fetch stocks owned by user from mongoDB
+    //This method will fetch stocks in watchlist by user from mongoDB
     this.routing.getStkWatchlistDetails().subscribe((res)=>{
       this.userWatchlist = res;
       console.log(`user's watchlist details${this.userWatchlist.stocks}`);
       this.userWathcliststkDetails = new stkWathclist(this.userWatchlist.stocks);
       this.routing.stkWatchlistEmitter.emit(this.userWathcliststkDetails);
+    });
+
+    //This method will fetch stocks owned by user from mongoDB
+    this.routing.getStkOwnedDetails().subscribe((res)=>{
+      this.userStocks = res;
+      console.log(`user owned stock details${this.userStocks}`);
+      this.userOwnedstkDetails = new stkOwned(this.userStocks);
+      this.routing.stkOwnedEmitter.emit(this.userOwnedstkDetails);
     });
   }
 }
