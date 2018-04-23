@@ -1,8 +1,10 @@
 <div class="mainDiv">
     <tr><th>Stocks</th><th>Shares</th><th>Value</th><th>Equity</th></tr>
-    <app-stocks-list
-      *ngFor="let stk of stks"
-      [data]="stk"
-      >
-    </app-stocks-list>
+    <div class="templateDiv">
+        <app-stocks-list
+        *ngFor="let stk of stks"
+        [data]="stk"
+        >
+      </app-stocks-list>
+    </div>
 </div>
