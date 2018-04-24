@@ -56,7 +56,61 @@ export class stkSearchComponent implements OnInit {
 
   //input the stock symbol
   //input the no of shares
+  ownedStkList;
+  stockList=[];//This has all the stocks the user owned.
+  accDetails;//Get accound details and extract the buying power store it in value
+  value:Object;
+  inputShares:any="";
+  stkSymbol="";
+  stkValue;
+  totalCost;
   addToStocksOwned(){
+    //Get the users buying power and Check for funds and allow purchase
+    
+    //This service will get the users buying power
+
+    //Get stock values and comapare with buying power
+    this.routing.getPrice(this.stkSymbol).subscribe((value)=>{
+      this.stkValue = value;
+      this.totalCost = this.stkValue * this.inputShares
+      this._userProfileService.getAccountDetails().subscribe(res=>{
+        this.accDetails = res;
+        this.value = this.accDetails.buyingPower
+      });
+    })
+
+    //Condition to check whether to purchase or not
+    if(this.value >= this.totalCost)
+    {
+      this._userProfileService.getStkOwnedDetails().subscribe((stocks)=>{
+        this.ownedStkList = (JSON.parse(stocks)).stocks;
+        for (let stocks of this.ownedStkList)
+        {
+          this.stockList.push(stocks.stock);
+        }
+        for (let stocks of this.stockList)
+        {
+          if(stocks == this.stkSymbol)
+          {
+            //update the shares in db
+            this._http.post('http://localhost:3002/api/buyStock/',{
+              googleID:14,
+              stkSymbol:`${this.stkSymbol}`,
+              shares:`${this.inputShares}`
+            }).subscribe((res)=>res);
+          }
+          else
+          {
+            //create an entry in db
+            console.log("hello");
+          }
+        }
+      });
+    }
+    else{
+      console.log("No purchase");
+    }
+
     //1.Does the user has enough funds to buy the total stock value?
     // stockvalue to purchase = stock price * no of shares.
     // compare the stockvalue with portfolio value. if portfolio value >= stock value do purchase else reject the request

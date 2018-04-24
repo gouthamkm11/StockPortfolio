@@ -8,8 +8,12 @@
       (click)='addToWatchlist()'
       >Add to Watchlist
     </button>
-    <button
+    <div>
+      <input [(ngModel)] = "stkSymbol"><br>
+      <input [(ngModel)] = "inputShares"><br>
+      <button
       (click)='addToStocksOwned()'
       >Buy
     </button>
+    </div>
 </div>
