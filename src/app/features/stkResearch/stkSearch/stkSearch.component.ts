@@ -37,14 +37,18 @@ export class stkSearchComponent implements OnInit {
     this.routing.getStkStats(this.symbol).subscribe(res => {this.routing.statsEmitter.emit(res);});
   }
 
+  initialList;
   addToWatchlist(){
     this._userProfileService.getStkWatchlistDetails().subscribe((symbol)=>{
-      this.list= symbol;
-      console.log(`yp yp yp ${this.list}`);
-      this.watchlistSymbols = this.list.stocks;
-      //checking whether the symbol present in watchlist
-      let ans = this.watchlistSymbols.indexOf(this.symbol);
-      console.log(`eeeeeeeeeeee${ans}`);
+      let res = JSON.parse(symbol);
+      this.list = res.stocks;
+      // this.watchlistSymbols = this.list.stocks;
+      let stkArray=[];
+      this.list.forEach(function(arrayItem){
+        stkArray.push(arrayItem.stock);
+      })
+      //checking whether the symbol present in list
+      let ans = stkArray.indexOf(this.symbol);
       if(ans === -1){
         this._http.post('http://localhost:3002/api/watchlistData/',{
           googleID:14,

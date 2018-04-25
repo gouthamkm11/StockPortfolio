@@ -14,11 +14,19 @@ export class ProfileWatchlistComponent implements OnInit {
   constructor(private _userProfileServices:userProfileServices) { }
 
   stkList=[];
+  initial=[];
   ngOnInit() {
     this._userProfileServices.getStkWatchlistDetails().subscribe((res)=>{
       let ans = JSON.parse(res);
-      this.stkList = ans.stocks;
-      console.log(this.stkList);
+      this.initial = ans.stocks;
+      let sizeofArray = this.initial.length;
+      if(sizeofArray>5)
+      {
+        this.stkList = this.initial.slice(0, 5);
+      }
+      else{
+        this.stkList = this.initial;
+      }
     })
     // this._userProfileServices.getStkWatchlistDetails().subscribe((res)=>{
     //   //Here the return type is object.
@@ -27,16 +35,7 @@ export class ProfileWatchlistComponent implements OnInit {
     //   console.log(`entire chucnk${res}`);
     //   this.initial = res;
     //   this.final = this.initial
-    //   console.log(`stocks values ${this.final}`);
-    //   let sizeofArray = this.final.length;
-    //   console.log(`sizeeeeee${sizeofArray}`);
-    //   if(sizeofArray>5)
-    //   {
-    //     this.stkList = initial.slice(0, 5);
-    //   }
-    //   else{
-    //     this.stkList = initial;
-    //   }
+    //   console.log(`stocks values ${this.final}`);      
     // });
   }
 }
