@@ -40,9 +40,11 @@ export class stkSearchComponent implements OnInit {
   addToWatchlist(){
     this._userProfileService.getStkWatchlistDetails().subscribe((symbol)=>{
       this.list= symbol;
+      console.log(`yp yp yp ${this.list}`);
       this.watchlistSymbols = this.list.stocks;
       //checking whether the symbol present in watchlist
       let ans = this.watchlistSymbols.indexOf(this.symbol);
+      console.log(`eeeeeeeeeeee${ans}`);
       if(ans === -1){
         this._http.post('http://localhost:3002/api/watchlistData/',{
           googleID:14,

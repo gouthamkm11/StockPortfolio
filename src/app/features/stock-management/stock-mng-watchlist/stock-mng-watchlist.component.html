@@ -1,3 +1,10 @@
-<p>
-  stock-mng-watchlist works!
-</p>
+<div class="watchlist">
+    <div style="text-align:center">Stock Wathclist</div>
+    <br>
+    <app-stock-mng-watchlist-item
+    *ngFor= "let item of stkList"
+    [data] = "item"
+    >
+    </app-stock-mng-watchlist-item>
+  </div>
+  

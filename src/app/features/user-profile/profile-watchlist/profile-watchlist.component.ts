@@ -14,8 +14,6 @@ export class ProfileWatchlistComponent implements OnInit {
   constructor(private _userProfileServices:userProfileServices) { }
 
   stkList=[];
-  initial;
-  final;
   ngOnInit() {
     this._userProfileServices.getStkWatchlistDetails().subscribe((res)=>{
       let ans = JSON.parse(res);
