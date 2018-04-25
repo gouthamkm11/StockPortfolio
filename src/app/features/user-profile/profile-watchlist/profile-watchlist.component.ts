@@ -14,19 +14,31 @@ export class ProfileWatchlistComponent implements OnInit {
   constructor(private _userProfileServices:userProfileServices) { }
 
   stkList=[];
+  initial;
+  final;
   ngOnInit() {
-    this._userProfileServices.stkWatchlistEmitter.subscribe((res)=>{
-      //Here the return type is object.
-      //So use console.dir to get the root of obj structure.
-      let initial = res.stkSymbol;
-      let sizeofArray = initial.length;
-      if(sizeofArray>5)
-      {
-        this.stkList = initial.slice(0, 5);
-      }
-      else{
-        this.stkList = initial;
-      }
-    });
+    // this._userProfileServices.getStkWatchlistDetails().subscribe((res)=>{
+    //   let ans = res;
+    //   this.stkList = ans.stocks.stock;
+    //   console.log(`stocksasdfadf${this.stkList}`)
+    // })
+    // this._userProfileServices.getStkWatchlistDetails().subscribe((res)=>{
+    //   //Here the return type is object.
+    //   //So use console.dir to get the root of obj structure.
+    //   //Response is a array
+    //   console.log(`entire chucnk${res}`);
+    //   this.initial = res;
+    //   this.final = this.initial
+    //   console.log(`stocks values ${this.final}`);
+    //   let sizeofArray = this.final.length;
+    //   console.log(`sizeeeeee${sizeofArray}`);
+    //   if(sizeofArray>5)
+    //   {
+    //     this.stkList = initial.slice(0, 5);
+    //   }
+    //   else{
+    //     this.stkList = initial;
+    //   }
+    // });
   }
 }

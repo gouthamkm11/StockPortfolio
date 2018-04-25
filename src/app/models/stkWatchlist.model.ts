@@ -1,5 +1,5 @@
 export class stkWathclist{
-    public stkSymbol:String[];
+    public stkSymbol:{stock:String}[];
 
     constructor(stkwatchlist){
         this.stkSymbol = stkwatchlist;

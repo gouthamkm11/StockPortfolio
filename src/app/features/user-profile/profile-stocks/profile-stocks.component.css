@@ -4,6 +4,7 @@
     margin: 5px;
     height: 320px;
     width: 600px;
+    overflow: scroll;
 }
 
 .templateDiv {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { userProfileServices } from '../../../services/userProfile.services';
 
 @Component({
   selector: 'app-profile-account-details',
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileAccountDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _services:userProfileServices) { }
 
   ngOnInit() {
+    this._services.accountInformationEmitter.subscribe((res)=>{
+      this.buyingPower = res.buyingPower;
+      this.portfolioValue = res.portfolioValue;
+    })
   }
 
-  buyingPower:string='Buying Power';
-  withdrawableCash:string='Withdrawable Cash';
+  buyingPower:string='';
+  portfolioValue:string='';
 }

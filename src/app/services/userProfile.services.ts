@@ -32,7 +32,7 @@ export class userProfileServices {
 
     getStkWatchlistDetails(){
         return this._httpClient.get('http://localhost:3002/api/watchlistData')
-        .map(result => result);
+        .map((result)=>result);
     }
 
     getAccountDetails(){

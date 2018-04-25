@@ -4,6 +4,7 @@ import { stkRoutingServices } from '../../services/stkRouting.services';
 import { userProfile } from '../../models/userProfile.model';
 import { stkOwned } from '../../models/stkOwned.model';
 import { stkWathclist } from '../../models/stkWatchlist.model';
+import { accountInfo } from '../../models/accountInfo.model';
 import { Observable } from "rxjs";
 
 @Component({
@@ -28,6 +29,9 @@ export class UserProfileComponent implements OnInit {
   userWatchlist;
   userWathcliststkDetails;//This model has current users watchlist stocks
 
+  //Below two will get the account details
+  userAccounts;
+  userAccountDetails;//This model has current user account.
 
   ngOnInit() {
     //This method will fetch profile data from mongoDB
@@ -48,10 +52,18 @@ export class UserProfileComponent implements OnInit {
 
     //This method will fetch stocks owned by user from mongoDB
     this.routing.getStkOwnedDetails().subscribe((res)=>{
-      this.userStocks = res;
-      console.log(`user owned stock details${this.userStocks}`);
-      this.userOwnedstkDetails = new stkOwned(this.userStocks);
+      this.userStocks = JSON.parse(res);
+      console.log(`user owned stock details${this.userStocks.stocks}`);
+      this.userOwnedstkDetails = new stkOwned(this.userStocks.stocks);
       this.routing.stkOwnedEmitter.emit(this.userOwnedstkDetails);
+    });
+
+    //This method will fetch account details form DB
+    this.routing.getAccountDetails().subscribe((res)=>{
+      this.userAccounts = res;
+      console.log(`user owned stock details${this.userAccounts}`);
+      this.userAccountDetails = new accountInfo(this.userAccounts);
+      this.routing.accountInformationEmitter.emit(this.userAccountDetails);
     });
   }
 }
