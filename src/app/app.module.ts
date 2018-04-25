@@ -36,7 +36,6 @@ import { StockMngWatchlistItemComponent } from './features/stock-management/stoc
 import { StockMngStocksComponent } from './features/stock-management/stock-mng-stocks/stock-mng-stocks.component';
 import { StockMngStockItemComponent } from './features/stock-management/stock-mng-stocks/stock-mng-stock-item/stock-mng-stock-item.component';
 
-
 const appRoutes:Routes = [
   {path:'', redirectTo: '/userLogin', pathMatch:'full'},
   {path:'userProfile',component:UserProfileComponent},

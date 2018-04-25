@@ -1,3 +1,23 @@
-<p>
-  stock-mng-stock-item works!
-</p>
+<div>
+    <tr>
+      <td>
+        {{stock | uppercase}}
+      </td>
+      <td>
+        {{value}}
+      </td>
+      <td>
+        <input [(ngModel)] = "number">
+      </td>
+      <td>
+        <button>
+          BUY
+        </button>
+      </td>
+      <td>
+        <button>
+          SELL
+        </button>
+      </td>
+    </tr>
+  </div>
