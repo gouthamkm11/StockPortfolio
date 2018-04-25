@@ -18,4 +18,7 @@ export class StockMngWatchlistComponent implements OnInit {
     })
   }
 
+  // removeItem(value:EventListener<any>){
+  //   console.log(`eeeee${value}`);
+  // }
 }

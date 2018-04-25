@@ -2,12 +2,25 @@
     border: 5px solid black;
     padding-right: 30px;
     margin: 5px;
+    margin-left: 55px;
     height: 320px;
     width: 600px;
     overflow: scroll;
 }
 
 .templateDiv {
-    margin: 15px;
+    margin: 30px;
     padding: 10px;
+}
+td{
+    /* border: 5px solid black; */
+    margin: 5px;
+    padding: 10px;
+
+}
+
+tr{
+    padding: 30px;
+    margin: 10px;
+    font-size: 20px;
 }

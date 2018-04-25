@@ -4,7 +4,7 @@
         {{stock | uppercase}}
       </td>
       <td>
-        {{value}}
+        Current Price
       </td>
       <td>
         <input [(ngModel)] = "number">
@@ -15,7 +15,9 @@
         </button>
       </td>
       <td>
-        <button>
+        <button
+        (click)="sellStock()"
+        >
           SELL
         </button>
       </td>
