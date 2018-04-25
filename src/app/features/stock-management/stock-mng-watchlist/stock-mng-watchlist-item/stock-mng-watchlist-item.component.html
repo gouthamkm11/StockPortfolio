@@ -1,3 +1,17 @@
-<p>
-  stock-mng-watchlist-item works!
-</p>
+<div>
+  <tr>
+    <td>
+      {{symbol}}
+    </td>
+    <td>
+      {{value}}
+    </td>
+    <td>
+      <button
+      (click)="removeStock()"
+      >
+        Remove
+      </button>
+    </td>
+  </tr>
+</div>

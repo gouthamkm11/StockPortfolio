@@ -12,7 +12,7 @@ export class StocksListComponent implements OnInit {
   
   @Input() data;
   stock;
-  equity;
+  equity:Number = 0;
   value;
   shares;
   constructor(private _routing:stkRoutingServices) { }

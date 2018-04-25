@@ -10,7 +10,7 @@ import { Http } from "@angular/http";
   templateUrl: './watchlist-item.component.html',
   styleUrls: ['./watchlist-item.component.css']
 })
-export class WatchlistItemComponent implements OnInit, OnChanges {
+export class WatchlistItemComponent implements OnInit {
 
   constructor(private _routing:stkRoutingServices) { }
 
@@ -24,17 +24,6 @@ export class WatchlistItemComponent implements OnInit, OnChanges {
       Observable.interval(1000).timeInterval()
     .flatMap(()=>this._routing.getPrice(this.data.stock))
     .subscribe((value)=>this.currentPrice=value);
-    // this._routing.getPrice(this.data).subscribe((value)=>{
-    //   this.currentPrice = value;
   }
 
-  ngOnChanges(){
-    
-  }
-
-  // ngOnChanges(){
-  //   Observable.interval(1000).timeInterval()
-  //   .flatMap(()=>this._routing.getPrice(this.data))
-  //   .subscribe((value)=>this.currentPrice=value);
-  // }
 }

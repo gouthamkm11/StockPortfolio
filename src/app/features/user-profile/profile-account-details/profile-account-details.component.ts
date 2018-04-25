@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { userProfileServices } from '../../../services/userProfile.services';
+import { stkRoutingServices } from '../../../services/stkRouting.services';
 
 @Component({
   selector: 'app-profile-account-details',
@@ -8,15 +9,17 @@ import { userProfileServices } from '../../../services/userProfile.services';
 })
 export class ProfileAccountDetailsComponent implements OnInit {
 
-  constructor(private _services:userProfileServices) { }
+  constructor(private _services:userProfileServices,private _routing:stkRoutingServices) { }
 
   ngOnInit() {
     this._services.accountInformationEmitter.subscribe((res)=>{
       this.buyingPower = res.buyingPower;
-      this.portfolioValue = res.portfolioValue;
+      this._routing.equityEmitter.subscribe((res)=>{
+        this.portfolioValue = res;
+      })
     })
   }
 
-  buyingPower:string='';
-  portfolioValue:string='';
+  buyingPower:Number=0;
+  portfolioValue:Number=0;
 }
