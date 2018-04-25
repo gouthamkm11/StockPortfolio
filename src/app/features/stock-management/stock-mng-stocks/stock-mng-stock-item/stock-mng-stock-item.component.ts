@@ -53,28 +53,31 @@ export class StockMngStockItemComponent implements OnInit {
       }
     }
 
+  buyStkValue;
+  buyTotalCost;
+  buyAccDetails;
+  buyValue
   buyStock(){
-  //   this.routing.getPrice(this.stkSymbol).subscribe((value)=>{
-  //     this.stkValue = value;
-  //     this.totalCost = this.stkValue * this.inputShares;
-  //     this._userProfileService.getAccountDetails().subscribe(res=>{
-  //       this.accDetails = res;
-  //       this.value = this.accDetails.buyingPower
-  //       if(this.value >= this.totalCost)
-  //       {
-  //         this._http.post('http://localhost:3002/api/buyStocks/',{
-  //           googleID:14,
-  //           stkSymbol:`${this.stkSymbol}`,
-  //           shares:`${this.inputShares}`,
-  //           purchaseCost:`${this.totalCost}`
-  //         }, {responseType:'text'}).subscribe((res)=>res);
-  //       }
-  //       else{
-  //         console.log("No purchase");
-  //       }
-  //     });
-  //   });
-  // }
+    this._routing.getPrice(this.stock).subscribe((value)=>{
+      this.buyStkValue = value;
+      this.buyTotalCost = Number(this.buyStkValue) * Number(this.number);
+      this._userProfileService.getAccountDetails().subscribe(res=>{
+        this.buyAccDetails = res;
+        this.buyValue = Number(this.buyAccDetails.buyingPower);
+        console.log(`asdasdasd${this.buyValue}`);
+        if(this.buyValue >= this.buyTotalCost)
+        {
+          this._http.post('http://localhost:3002/api/buyStocks/',{
+            googleID:14,
+            stkSymbol:`${this.stock}`,
+            shares:`${this.number}`,
+            purchaseCost:`${this.buyTotalCost}`
+          }, {responseType:'text'}).subscribe((res)=>res);
+        }
+        else{
+          console.log("No purchase");
+        }
+      });
+    });
   }
-
 }

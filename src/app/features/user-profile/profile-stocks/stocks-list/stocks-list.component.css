@@ -1,12 +1,28 @@
-td{
+.mainDiv{
     /* border: 5px solid black; */
-    margin: 5px;
-    padding: 10px;
-
+    margin: 0px;
+    padding: 0px;
+}
+.tableDiv{
+    /* border: solid 5px red; */
+    margin: 0px;
+    padding: 0px;
+    height: 40px;
 }
 
-tr{
-    padding: 30px;
-    margin: 10px;
-    font-size: 20px;
+.tableDesign{
+    /* border: 5px solid yellowgreen; */
+    height: 30px;
+    max-width: 300px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.cellDiv{
+    padding: 0px;
+    margin-left: 20px;
+    text-align: center;
+    height: 25px;
+    width: 70px;
+    /* border: 2px dotted dodgerblue; */
 }

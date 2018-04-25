@@ -1,25 +1,42 @@
-<div>
-    <tr>
-      <td>
-        {{stock | uppercase}}
+<div class="mainDiv"> 
+  <div class="tableDiv">
+    <table class="tableDesign">
+      <tr>
+        <td>
+          <div class="cellDiv">
+            {{stock | uppercase}}
+          </div>
+        </td>
+        <td >
+          <div class="cellDiv">
+            Current Price
+          </div>
+        </td>
+        <td >
+          <div class="cellDiv">
+            <input style="width:25%"[(ngModel)] = "number">
+          </div>
+        </td>
+        <td>
+          <div class="cellDiv">
+            <button
+            (click)="buyStock()"
+            >
+            BUY
+          </button>
+        </div>
       </td>
       <td>
-        Current Price
-      </td>
-      <td>
-        <input [(ngModel)] = "number">
-      </td>
-      <td>
-        <button>
-          BUY
+        <div>
+          <button
+          (click)="sellStock()"
+          >
+           SELL
         </button>
-      </td>
-      <td>
-        <button
-        (click)="sellStock()"
-        >
-          SELL
-        </button>
-      </td>
-    </tr>
-  </div>
+      </div>
+    </td>
+  </tr>
+</table>
+<hr>
+</div>
+</div>

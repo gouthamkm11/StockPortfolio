@@ -1,0 +1,10 @@
+.firstDiv {
+    float: left;
+    margin-right: 10px;
+    margin-left: 35px;
+}
+
+.secondDiv{
+    float: left;
+    margin-left: 45px;
+}
