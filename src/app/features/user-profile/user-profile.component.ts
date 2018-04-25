@@ -44,7 +44,7 @@ export class UserProfileComponent implements OnInit {
     
     //This method will fetch stocks in watchlist by user from mongoDB
     this.routing.getStkWatchlistDetails().subscribe((res)=>{
-      this.userWatchlist = res;
+      this.userWatchlist = JSON.parse(res);
       console.log(`user's watchlist details${this.userWatchlist.stocks}`);
       this.userWathcliststkDetails = new stkWathclist(this.userWatchlist.stocks);
       this.routing.stkWatchlistEmitter.emit(this.userWathcliststkDetails);

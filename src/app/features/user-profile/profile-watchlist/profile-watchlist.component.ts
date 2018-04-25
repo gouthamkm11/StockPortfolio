@@ -17,11 +17,11 @@ export class ProfileWatchlistComponent implements OnInit {
   initial;
   final;
   ngOnInit() {
-    // this._userProfileServices.getStkWatchlistDetails().subscribe((res)=>{
-    //   let ans = res;
-    //   this.stkList = ans.stocks.stock;
-    //   console.log(`stocksasdfadf${this.stkList}`)
-    // })
+    this._userProfileServices.getStkWatchlistDetails().subscribe((res)=>{
+      let ans = JSON.parse(res);
+      this.stkList = ans.stocks;
+      console.log(this.stkList);
+    })
     // this._userProfileServices.getStkWatchlistDetails().subscribe((res)=>{
     //   //Here the return type is object.
     //   //So use console.dir to get the root of obj structure.

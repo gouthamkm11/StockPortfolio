@@ -21,7 +21,6 @@ export class WatchlistItemComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.symbol = this.data.stock;
-    console.log(`thissssssssssss${this.symbol}`);
       Observable.interval(1000).timeInterval()
     .flatMap(()=>this._routing.getPrice(this.data.stock))
     .subscribe((value)=>this.currentPrice=value);

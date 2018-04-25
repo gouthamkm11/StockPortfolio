@@ -15,7 +15,7 @@ export class userProfileServices {
     profileDetailsEmitter = new EventEmitter<userProfile>();
     accountInformationEmitter = new EventEmitter<accountInfo>();
     stkOwnedEmitter = new EventEmitter<Object>();
-    stkWatchlistEmitter = new EventEmitter<stkWathclist>();
+    stkWatchlistEmitter = new EventEmitter<Object>();
 
     //Methods to access the angularEndpoints configured at the backend
     getProfileDetails(){
@@ -31,8 +31,10 @@ export class userProfileServices {
     }
 
     getStkWatchlistDetails(){
-        return this._httpClient.get('http://localhost:3002/api/watchlistData')
-        .map((result)=>result);
+        return this._httpClient.get<string>('http://localhost:3002/api/watchlistData')
+        .map((result)=>{
+            return JSON.stringify(result);
+        });
     }
 
     getAccountDetails(){
