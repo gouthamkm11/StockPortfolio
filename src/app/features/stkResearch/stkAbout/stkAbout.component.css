@@ -1,6 +1,6 @@
 .stkAbout{
-    overflow: auto;
     color: black;
-    padding: 15px;
+    padding: 5px;
     border: solid 5px green;
+    width: auto;
 }

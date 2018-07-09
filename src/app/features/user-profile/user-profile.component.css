@@ -1,0 +1,24 @@
+.mainDiv{
+    margin:10px 55px;
+    border: 5px solid black;
+    float: left;
+    height: 550px;
+    max-width: 1500px;
+    overflow: hidden;
+}
+
+.movedLeft{
+    float: left;
+}
+
+.graphDiv{
+    float: left;
+}
+
+.profileDiv{
+    float: left;
+}
+
+.accDiv{
+    float: left;
+}

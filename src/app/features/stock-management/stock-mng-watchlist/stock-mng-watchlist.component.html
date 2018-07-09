@@ -1,0 +1,11 @@
+<div class="watchlist">
+    <div style="text-align:center">EDIT Stock Wathclist</div>
+    <br>
+    <app-stock-mng-watchlist-item
+    *ngFor= "let item of stkList"
+    [data] = "item"
+    (stkSymbol)="removeItem($event)"
+    >
+    </app-stock-mng-watchlist-item>
+  </div>
+  

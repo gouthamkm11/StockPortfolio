@@ -1,0 +1,32 @@
+.profilePic {
+    border: solid 5px green;
+    margin: 5px;
+    padding: 5px;
+    float: left;
+}
+
+table,th,td {
+    border: solid 5px green;
+}
+
+.tableDiv{
+    border: solid 5px red;
+    margin: 5px;
+    padding: 5px;
+    float: left;
+    height: 120px;
+}
+
+.tableDesign{
+    max-width: 300px;
+    float: left;
+}
+
+.mainDiv {
+    border: 5px solid black;
+    padding: 5px;
+    margin: 5px;
+    width: 470px;
+    height: 150px;
+    float: left;
+}

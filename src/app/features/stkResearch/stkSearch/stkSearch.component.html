@@ -4,4 +4,16 @@
   <button
     (click)='getData()'
     >Research</button>
+    <button
+      (click)='addToWatchlist()'
+      >Add to Watchlist
+    </button>
+    <div>
+      <input [(ngModel)] = "stkSymbol"><br>
+      <input [(ngModel)] = "inputShares"><br>
+      <button
+      (click)='addToStocksOwned()'
+      >Buy
+    </button>
+    </div>
 </div>

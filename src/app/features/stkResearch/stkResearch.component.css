@@ -1,11 +1,34 @@
-table {
-    width: 1000px;
-    height: 100%;
+/* table {
+    width: 200px;
+    height: 300px;
 }
 tr{
-    width:1000px;
+    width:200px;
+} */
+.mainDivStyle{
+    float: left;
+    margin: 5px;
+    /* border: 5px solid black; */
 }
 
-.mainDivStyle{
-    overflow: hidden;
+.searchDiv{
+    float: left;
+    margin: 5px;
+    border: 5px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.tableDiv{
+    float: left;
+    margin: 5px;
+    /* border: 5px solid black; */
+    padding: 5px;
+    margin: 5px;
+    height: 100px;
+    width: 200px;
+}
+
+.mainTable{
+    float: left;
 }

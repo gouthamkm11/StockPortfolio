@@ -1,0 +1,10 @@
+<div class="mainDiv">
+    <!-- <tr><th>Stocks</th><th>Shares</th><th>Value</th><th>Equity</th></tr> -->
+    <div class="templateDiv">
+      <app-stock-mng-stock-item
+      *ngFor="let stk of stks"
+      [data]="stk"
+      >
+    </app-stock-mng-stock-item>
+  </div>
+</div>

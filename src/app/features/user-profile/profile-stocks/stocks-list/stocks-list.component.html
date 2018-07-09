@@ -1,0 +1,29 @@
+<div class="mainDiv"> 
+    <div class="tableDiv">
+        <table class="tableDesign">
+            <tr>
+                <td >
+                    <div class="cellDiv">
+                        {{stock | uppercase}}
+                    </div>
+                </td>
+                <td>
+                    <div class="cellDiv">
+                        {{shares| uppercase}}
+                    </div>
+                </td>
+                <td>
+                    <div class="cellDiv">
+                        {{value | number : '1.2-2'}}
+                    </div>
+                </td>
+                <td>
+                    <div class="cellDiv">
+                        {{equity | number : '1.2-2'}}
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <hr>
+    </div>
+</div>

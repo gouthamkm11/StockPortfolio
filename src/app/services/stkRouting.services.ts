@@ -9,6 +9,8 @@ export class stkRoutingServices {
     descriptionEmitter = new EventEmitter<Object>();
     statsEmitter = new EventEmitter<Object>();
     symbolEmitter = new EventEmitter<string>();
+    //event to emit equity values from stock component to account component
+    equityEmitter = new EventEmitter<Number>();
     
     getStkAbout(symbol){
         return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/company?filter=description`)
@@ -40,7 +42,9 @@ export class stkRoutingServices {
         return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/chart/5y`)
         .map(res => res);
     }
+
+    getPrice(symbol){
+        return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/price`)
+        .map(res => res);
+    }
 }
-
-
-
