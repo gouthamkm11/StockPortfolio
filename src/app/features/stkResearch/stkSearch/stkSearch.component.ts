@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+//Http client module
+import { HttpClient } from '@angular/common/http';
+//Service Class
 import { stkRoutingServices } from '../../../services/stkRouting.services';
 import { userProfileServices } from '../../../services/userProfile.services';
+//stock Watchlist Models
 import { stkWathclist } from '../../../models/stkWatchlist.model';
 import { Symbol } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+
 
 
 @Component({
@@ -70,6 +74,7 @@ export class stkSearchComponent implements OnInit {
   stkSymbol="";
   stkValue;
   totalCost;
+  
   addToStocksOwned(){
     //Get the users buying power and Check for funds and allow purchase
     

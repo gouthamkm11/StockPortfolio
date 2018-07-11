@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+//service class
 import { stkRoutingServices } from '../../../services/stkRouting.services';
 
 @Component({
@@ -10,6 +11,7 @@ export class stkStatsComponent implements OnInit {
 
   constructor(private _routing:stkRoutingServices) { }
   
+  //Component properties
   stats:Object;
   close:number;
   open:number;
@@ -20,9 +22,9 @@ export class stkStatsComponent implements OnInit {
         this.stats = res;
         this.close = res.close.price;
         this.open = res.open.price;
-        console.log(this.stats);
-        console.log(this.close);
-        console.log(this.open);
+        // console.log(this.stats);
+        // console.log(this.close);
+        // console.log(this.open);
       }
     )
   }

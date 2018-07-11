@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+//Charts modules
 import { Chart } from 'chart.js';
+//Routing Service Class
 import { stkRoutingServices } from '../../../services/stkRouting.services';
 
 @Component({
