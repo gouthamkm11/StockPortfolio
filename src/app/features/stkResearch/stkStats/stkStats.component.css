@@ -1,6 +1,28 @@
-.divStats{
+/* .divStats{
     border: solid 5px blue;
     background-color: lightblue;
     color: black;
     padding: 5px;  
+} */
+
+
+/* Main container that hold ohlc values*/
+
+.stock-ohlc{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.stock-ohlc > h3,p{
+    margin: 10px auto;
+    padding: 0px;
+    width: 25%;
+}
+
+.stock-ohlc > h3 {
+    text-align: right;
 }
