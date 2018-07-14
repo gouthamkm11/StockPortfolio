@@ -34,7 +34,7 @@ tr{
 } */
 
 
-
+/* Main Container that hold two flex items */
 .stock-research-container{
     display: flex;
     flex-wrap: wrap;
@@ -46,6 +46,7 @@ tr{
     width: 90%;
 }
 
+/* First Flex Item - Search Stock Section*/
 .stock-serach{
     margin: 5px auto;
     padding: 5px;
@@ -53,9 +54,21 @@ tr{
     border: 5px solid black;
 }
 
+/* Second Flex Item - Display Research Data - Which will be flex and has other components*/
 .stock-research-data{
     margin: 5px auto;
     padding: 5px;
     width: 65%;
     border: 5px solid black;
 }
+
+.stock-about,
+.stock-stats,
+.stock-charts
+ > * {
+    margin: 5px auto;
+    border: 5px solid black;
+    padding: 5px;
+    width: 90%;
+}
+

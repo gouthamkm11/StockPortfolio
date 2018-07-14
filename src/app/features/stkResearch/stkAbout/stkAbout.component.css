@@ -1,6 +1,12 @@
-.stkAbout{
+/* .stkAbout{
     color: black;
     padding: 5px;
     border: solid 5px green;
     width: auto;
+} */
+
+.about-stock{
+    margin: auto;
+    padding: 0px;
+    width: 100%;
 }
