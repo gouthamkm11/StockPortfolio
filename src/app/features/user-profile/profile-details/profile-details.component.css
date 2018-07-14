@@ -1,32 +1,52 @@
-.profilePic {
-    border: solid 5px green;
-    margin: 5px;
-    padding: 5px;
-    float: left;
-}
+/* Parent Contianer */
 
-table,th,td {
-    border: solid 5px green;
-}
-
-.tableDiv{
-    border: solid 5px red;
-    margin: 5px;
-    padding: 5px;
-    float: left;
-    height: 120px;
-}
-
-.tableDesign{
-    max-width: 300px;
-    float: left;
-}
-
-.mainDiv {
+.profile-details-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px;
     border: 5px solid black;
+    padding: 10px;
+    width: 600px;
+    height: 250px;
+}
+
+/* First child container */
+
+.profile-picture{
+    margin: 0px auto;
+    padding: 2px;
+    width: 30%;
+}
+
+.profile-picture > img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Second Child Container whose display type is flex */
+
+.profile-user-details{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin: 0px auto;
+    padding: 2px;
+    width: 60%;
+}
+
+.profile-user-details > h3{
+    margin: 15px 2px;
     padding: 5px;
-    margin: 5px;
-    width: 470px;
-    height: 150px;
-    float: left;
+    width: 40%;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.profile-user-details > h4 {
+    margin: 15px 2px;
+    padding: 5px;
+    width: 40%;
+    font-size: 1.1rem;
+    text-align: left;
 }

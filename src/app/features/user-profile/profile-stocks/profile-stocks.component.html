@@ -1,11 +1,21 @@
-<div class="mainDiv">
+<!-- <div class="mainDiv">
     <div style="text-align:center;margin-top:35px">User Owned Stocks</div>
     <div class="templateDiv">
-        <!-- <tr><th>Stocks</th><th>Shares</th><th>Value</th><th>Equity</th></tr> -->
+        <tr><th>Stocks</th><th>Shares</th><th>Value</th><th>Equity</th></tr>
         <app-stocks-list
         *ngFor="let stk of stks"
         [data]="stk"
         >
       </app-stocks-list>
     </div>
-</div> 
+</div> -->
+
+
+<div class="owned-stocks-container">
+    <h2>User Owned Stocks</h2>
+    <app-stocks-list
+        *ngFor="let stk of stks"
+        [data]="stk"
+        >
+    </app-stocks-list>
+</div>

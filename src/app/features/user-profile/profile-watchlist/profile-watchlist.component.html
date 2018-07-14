@@ -1,6 +1,17 @@
-<div class="watchlist">
+<!-- <div class="watchlist">
   <div style="text-align:center">Stock Wathclist</div>
   <br>
+  <app-watchlist-item
+  *ngFor= "let item of stkList"
+  [data] = "item"
+  >
+  </app-watchlist-item>
+</div> -->
+
+
+<div class="stock-watchlist-container">
+  <h2>Stock Wathclist</h2>
+  <h3></h3>
   <app-watchlist-item
   *ngFor= "let item of stkList"
   [data] = "item"

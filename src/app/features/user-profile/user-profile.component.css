@@ -1,4 +1,4 @@
-.mainDiv{
+/* .mainDiv{
     margin:10px 55px;
     border: 5px solid black;
     float: left;
@@ -21,4 +21,26 @@
 
 .accDiv{
     float: left;
+} */
+
+
+/* profile container */
+
+.profile-container{
+    display: flex;
+    flex-wrap: wrap;
+    border: 5px solid black;
+    margin: 0px 15px;
+}
+
+.profile-details{
+    margin: 5px auto;
+}
+
+.profile-watchlist{
+    margin: 5px auto;
+}
+
+.profile-stocks{
+    margin: 5px auto;
 }
