@@ -1,4 +1,4 @@
-<div class="divSearch">
+<!-- <div class="divSearch">
   Enter Symbol Below
   <input type="text" style="display:block" [(ngModel)]="symbol">
   <button
@@ -16,4 +16,22 @@
       >Buy
     </button>
     </div>
+</div> -->
+
+<div class="search-form-container">
+  <div class="flex-container search-stock-container">
+    <h3>Search Stock</h3>
+    <input type="text" placeholder="Stock Symbol" [(ngModel)]="symbol">
+    <button (click)='getData()'>Search</button>
+    <button (click)='addToWatchlist()'>Add to Watchlist</button>
+  </div>
+  <div class="flex-container buy-stock-container">
+    <h3>Buy Stocks</h3>
+    <input type="text" placeholder="Stock Symbol" [(ngModel)] = "stkSymbol">
+    <input type="text" placeholder="No of Shares" [(ngModel)] = "inputShares">
+    <button (click)='addToStocksOwned()'>BUY IT!</button>
+  </div>
 </div>
+
+
+

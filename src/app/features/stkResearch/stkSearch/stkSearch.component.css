@@ -1,7 +1,64 @@
-.divSearch{
+/* .divSearch{
     border: solid 5px brown;
     background-color: burlywood;
     color:  black;
     padding: 15px;
     float: left;
+} */
+
+
+/* main container that has two flex containers */
+.search-form-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 2px auto;
+    width: 90%;
+    text-align: center;
+}
+
+/* Flex Container Styling*/
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 5px auto;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+/* First Flex Container */
+.search-stock-container > h3, input{
+    margin: 2px auto;
+    padding: 1px;
+    width: 100%;
+}
+
+.search-stock-container > button{
+    margin: 2px auto;
+    padding: 1px;
+    width: 49%;
+}
+
+
+
+/* Second Flex Container */
+.buy-stock-container > h3{
+    margin: 2px auto;
+    padding: 1px;
+    width: 100%;   
+}
+
+.buy-stock-container > input {
+    margin: 2px auto;
+    padding: 2px;
+    width: 45%;
+}
+
+.buy-stock-container > button{
+    margin: 2px auto;
+    padding: 1px;
+    width: 50%;
 }
