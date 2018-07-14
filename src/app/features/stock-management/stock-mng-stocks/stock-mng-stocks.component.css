@@ -1,6 +1,5 @@
-/* .mainDiv{
-    float: left;
-} */
+
+/* Owned stock container */
 
 .manage-owned-stock{
     margin: 15px auto;
@@ -8,6 +7,8 @@
     width: 90%;
     text-align: center;
 }
+
+/* Styling the heading element */
 
 .manage-owned-stock > h2 {
     margin: 5px auto;

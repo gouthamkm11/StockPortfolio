@@ -1,33 +1,5 @@
-/* .mainDiv{
-    border: 5px solid black;
-    margin: 0px;
-    padding: 0px;
-}
-.tableDiv{
-    border: solid 5px red;
-    margin: 0px;
-    padding: 0px;
-    height: 40px;
-}
 
-.tableDesign{
-    border: 5px solid yellowgreen;
-    height: 30px;
-    max-width: 300px;
-    padding: 0px;
-    margin: 0px;
-}
-
-.cellDiv{
-    padding: 0px;
-    margin-left: 20px;
-    text-align: center;
-    height: 25px;
-    width: 70px;
-    border: 2px dotted dodgerblue;
-} */
-
-
+/* Single row container that has stock name, input , buy and sell button */
 .manage-ownedStock-row{
     box-sizing: border-box;
     display: flex;
@@ -39,6 +11,7 @@
     width: 100%;
 }
 
+/* Global styling to all the child elements in the single row container */
 .manage-ownedStock-row *{
     margin: 0px auto;
     padding: 5px;

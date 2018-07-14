@@ -1,21 +1,9 @@
-<!-- <div class="watchlist">
-    <div style="text-align:center">EDIT Stock Wathclist</div>
-    <br>
-    <app-stock-mng-watchlist-item
-    *ngFor= "let item of stkList"
-    [data] = "item"
-    (stkSymbol)="removeItem($event)"
-    >
-    </app-stock-mng-watchlist-item>
-  </div>
-   -->
-
-   <div class="manage-watchlist-container">
-     <h2>Edit Stock Wathclist</h2>
-     <app-stock-mng-watchlist-item
-     *ngFor= "let item of stkList"
-    [data] = "item"
-    (stkSymbol)="removeItem($event)"
-     >
-     </app-stock-mng-watchlist-item>
-   </div>
+<div class="manage-watchlist-container">
+  <h2>Edit Stock Wathclist</h2>
+  <app-stock-mng-watchlist-item
+  *ngFor= "let item of stkList"
+  [data] = "item"
+  (stkSymbol)="removeItem($event)"
+  >
+  </app-stock-mng-watchlist-item>
+</div>
