@@ -1,10 +1,25 @@
-.firstDiv {
-    float: left;
-    margin-right: 10px;
-    margin-left: 35px;
+/* Manage Portfolio Main Container */
+.manage-portfolio-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    box-sizing: border-box;
+    margin: 15px auto;
+    padding: 15px;
+    width: 90%;
 }
 
-.secondDiv{
-    float: left;
-    margin-left: 45px;
+/* First Child Element - Watchlist */
+.manage-watchlist{
+    margin: 15px auto;
+    padding: 30px;
+    width: 25%;
+}
+
+/* Second Child Element - Owned Stocks */
+.manage-ownedstocks {
+    margin: 15px auto;
+    padding: 30px;
+    width: 55%;
 }

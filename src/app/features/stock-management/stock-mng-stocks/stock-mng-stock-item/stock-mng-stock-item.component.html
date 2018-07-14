@@ -1,4 +1,4 @@
-<div class="mainDiv"> 
+<!-- <div class="mainDiv"> 
   <div class="tableDiv">
     <table class="tableDesign">
       <tr>
@@ -39,4 +39,20 @@
 </table>
 <hr>
 </div>
+</div> -->
+
+
+<div class="manage-ownedStock-row">
+  <h3>{{stock | uppercase}}</h3>
+  <input [(ngModel)] = "number">
+  <button
+  (click)="buyStock()"
+  >
+  BUY
+</button>
+<button
+  (click)="sellStock()"
+  >
+    SELL
+</button>
 </div>
