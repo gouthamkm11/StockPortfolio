@@ -1,13 +1,4 @@
-/* .divStats{
-    border: solid 5px blue;
-    background-color: lightblue;
-    color: black;
-    padding: 5px;  
-} */
-
-
 /* Main container that hold ohlc values*/
-
 .stock-ohlc{
     display: flex;
     flex-wrap: wrap;

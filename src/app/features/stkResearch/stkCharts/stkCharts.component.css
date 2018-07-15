@@ -1,9 +1,11 @@
+/* Main charts Container - Made all the element to display in block level*/
 .charts-container{
     margin: 0px auto;
     padding: 0px;
     width: 100%;
 }
 
+/* First div Element that Holds All the Buttons to view past stock data*/
 .months-chart-data{
     margin: 0px auto;
     width: 60%;
@@ -16,6 +18,8 @@
     justify-content: center;
     align-content: center;
 }
+
+/* Second Div Element that Holds the Canvas */
 
 .display-chart{
     margin: 0px auto;
