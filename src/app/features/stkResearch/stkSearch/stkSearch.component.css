@@ -1,12 +1,3 @@
-/* .divSearch{
-    border: solid 5px brown;
-    background-color: burlywood;
-    color:  black;
-    padding: 15px;
-    float: left;
-} */
-
-
 /* main container that has two flex containers */
 .search-form-container{
     display: flex;
@@ -41,8 +32,6 @@
     padding: 1px;
     width: 49%;
 }
-
-
 
 /* Second Flex Container */
 .buy-stock-container > h3{

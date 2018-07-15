@@ -1,39 +1,3 @@
-/* table {
-    width: 200px;
-    height: 300px;
-}
-tr{
-    width:200px;
-} */
-/* .mainDivStyle{
-    float: left;
-    margin: 5px;
-    border: 5px solid black;
-}
-
-.searchDiv{
-    float: left;
-    margin: 5px;
-    border: 5px solid black;
-    padding: 5px;
-    margin: 5px;
-}
-
-.tableDiv{
-    float: left;
-    margin: 5px;
-    border: 5px solid black;
-    padding: 5px;
-    margin: 5px;
-    height: 100px;
-    width: 200px;
-}
-
-.mainTable{
-    float: left;
-} */
-
-
 /* Main Container that hold two flex items */
 .stock-research-container{
     display: flex;
@@ -52,6 +16,7 @@ tr{
     padding: 5px;
     width: 25%;
     border: 5px solid black;
+    align-self: flex-start;
 }
 
 /* Second Flex Item - Display Research Data - Which will be flex and has other components*/
@@ -62,13 +27,17 @@ tr{
     border: 5px solid black;
 }
 
-.stock-about,
-.stock-stats,
-.stock-charts
- > * {
+.stock-about, .stock-stats, .stock-charts {
     margin: 5px auto;
     border: 5px solid black;
     padding: 5px;
     width: 90%;
 }
+
+/* .stock-charts {
+    margin: 5px auto;
+    border: 5px solid black;
+    padding: 5px;
+    width: 90%;
+} */
 
