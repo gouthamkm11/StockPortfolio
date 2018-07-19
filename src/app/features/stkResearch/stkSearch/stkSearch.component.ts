@@ -20,30 +20,25 @@ export class stkSearchComponent implements OnInit {
     private _http:HttpClient
   ) { }
 
-  symbol:string;
-  //To access watchlist stock symbols
-  list;
-  watchlistSymbols;
-  //
-
   ngOnInit() {
   }
   
-  getInput(event:any){
-    this.symbol = event.value;
-  }
-  
+  //User entered symbol property
+  symbol:string;
+  //This method gets triggered by "Search" button click.
   getData(){
     this.routing.symbolEmitter.emit(this.symbol);
     this.routing.getStkAbout(this.symbol).subscribe(res =>{this.routing.descriptionEmitter.emit(res);});
     this.routing.getStkStats(this.symbol).subscribe(res => {this.routing.statsEmitter.emit(res);});
   }
 
-  initialList;
+
+  //List array property
+  list;
+  //This method gets triggered by "Add to Watchlist" button click
   addToWatchlist(){
     this._userProfileService.getStkWatchlistDetails().subscribe((res)=>{
       this.list = res.stocks;
-      // this.watchlistSymbols = this.list.stocks;
       let stkArray=[];
       this.list.forEach(function(arrayItem){
         stkArray.push(arrayItem.stock);
@@ -56,7 +51,7 @@ export class stkSearchComponent implements OnInit {
           stocks:`${this.symbol}`
         }).subscribe((res)=>res);
       }
-      else {console.log("stock exits")};
+      else {alert('Stock exists in the array')};
     });
   }
 
@@ -67,8 +62,8 @@ export class stkSearchComponent implements OnInit {
   stockList=[];//This has all the stocks the user owned.
   accDetails;//Get accound details and extract the buying power store it in value
   value:Object;
-  inputShares:any="";
-  stkSymbol="";
+  inputShares:string;
+  stkSymbol:string;
   stkValue;
   totalCost;
   
@@ -80,7 +75,7 @@ export class stkSearchComponent implements OnInit {
     //Get stock values and comapare with buying power
     this.routing.getPrice(this.stkSymbol).subscribe((value)=>{
       this.stkValue = value;
-      this.totalCost = this.stkValue * this.inputShares;
+      this.totalCost = this.stkValue * Number(this.inputShares);
       this._userProfileService.getAccountDetails().subscribe(res=>{
         this.accDetails = res;
         this.value = this.accDetails.buyingPower
@@ -98,44 +93,13 @@ export class stkSearchComponent implements OnInit {
         }
       });
     });
-  }
-          // this._userProfileService.getStkOwnedDetails().subscribe((stocks)=>{
-          //   this.ownedStkList = (JSON.parse(stocks)).stocks;
-          //   console.log(`user owned stocks${this.ownedStkList}`);
-          //   for (let stocks of this.ownedStkList)
-          //   {
-          //     this.stockList.push(stocks.stock);
-          //   }
-    //     for (let stocks of this.stockList)
-    //     {
-    //       if(stocks == this.stkSymbol)
-    //       {
-    //         //update the shares in db
-           
-    //       }
-    //       else
-    //       {
-    //         //create an entry in db
-    //         console.log("hello");
-    //       }
-    //     }
-    //   });
-    // }
-    // else{
-    //   console.log("No purchase");
-    // }
-    //   });
-
-    //Condition to check whether to purchase or not
-    
-   
-
-    //1.Does the user has enough funds to buy the total stock value?
-    // stockvalue to purchase = stock price * no of shares.
-    // compare the stockvalue with portfolio value. if portfolio value >= stock value do purchase else reject the request
-    //2. User has enough funds to purchase the stock.
-    //This has two case
-    //1. Does the user already have the stock 2. First time purchase
-    //Case1:(Yes) Add the user entered no.of.share values to the symbol with the existing share value.(previous stock value + user entered stock value)
-    //Case2:Add the user entered stock and shares value to the table.
+  }       
+  //1.Does the user has enough funds to buy the total stock value?
+  // stockvalue to purchase = stock price * no of shares.
+  // compare the stockvalue with portfolio value. if portfolio value >= stock value do purchase else reject the request
+  //2. User has enough funds to purchase the stock.
+  //This has two case
+  //1. Does the user already have the stock 2. First time purchase
+  //Case1:(Yes) Add the user entered no.of.share values to the symbol with the existing share value.(previous stock value + user entered stock value)
+  //Case2:Add the user entered stock and shares value to the table.
 }

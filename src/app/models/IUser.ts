@@ -1,6 +1,6 @@
 export interface IUser{
     googleID: string,
     username: string,
-    profilePic:string
+    profilePic:string,
     gender:string
 }

@@ -10,7 +10,7 @@ import { stkRoutingServices } from "../../../services/stkRouting.services";
 export class stkAboutComponent implements OnInit{
     constructor(private _routing:stkRoutingServices){}
 
-    description:string = ' ';
+    description:string;
 
     ngOnInit(){
         this.description = this._routing.descriptionEmitter.subscribe(

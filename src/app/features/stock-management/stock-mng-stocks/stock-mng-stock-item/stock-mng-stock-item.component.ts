@@ -11,45 +11,38 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StockMngStockItemComponent implements OnInit {
 
-  @Input() data;
-  stock;
+  @Input() data:{stock:string,shares:number};
   equity:Number = 0;
-  value;
-  shares;
-  number;
+  inputNumber:number;
+  
   constructor(private _routing:stkRoutingServices,
               private _userProfileService:userProfileServices,
               private _http:HttpClient) { }
+
+  
   ngOnInit() {
-    this.stock = this.data.stock;
-    this.shares = this.data.shares;
-    // Observable.interval(1000).timeInterval().flatMap(()=>this._routing.getPrice(this.stock))
-    // .subscribe((value)=>{
-    //   this.value = value;
-    //   this.equity = this.value * this.shares;
-    // });
   }
 
   stkValue;
   totalCost;
   sellStock(){
     //Is user allowed for sell
-    if(this.number <= this.data.shares)
+    if(this.inputNumber <= this.data.shares)
     {
-      this._routing.getPrice(this.stock).subscribe((value)=>{
+      this._routing.getPrice(this.data.stock).subscribe((value)=>{
         this.stkValue = value;
-        this.totalCost = this.stkValue * this.number;
+        this.totalCost = this.stkValue * this.inputNumber;
         this._http.post('http://localhost:3002/api/sellStocks/',{
               googleID:14,
-              stkSymbol:`${this.stock}`,
-              shares:`${this.number}`,
+              stkSymbol:`${this.data.stock}`,
+              shares:`${this.inputNumber}`,
               currentShares:`${this.data.shares}`,
               sellCost:`${this.totalCost}`
             },{responseType:'text'}).subscribe((res)=>res);
         });
       }
       else{
-        console.log("No sell");
+        alert(`No shares to sell the stock`)
       }
     }
 
@@ -58,9 +51,9 @@ export class StockMngStockItemComponent implements OnInit {
   buyAccDetails;
   buyValue
   buyStock(){
-    this._routing.getPrice(this.stock).subscribe((value)=>{
+    this._routing.getPrice(this.data.stock).subscribe((value)=>{
       this.buyStkValue = value;
-      this.buyTotalCost = Number(this.buyStkValue) * Number(this.number);
+      this.buyTotalCost = Number(this.buyStkValue) * Number(this.inputNumber);
       this._userProfileService.getAccountDetails().subscribe(res=>{
         this.buyAccDetails = res;
         this.buyValue = Number(this.buyAccDetails.buyingPower);
@@ -69,13 +62,13 @@ export class StockMngStockItemComponent implements OnInit {
         {
           this._http.post('http://localhost:3002/api/buyStocks/',{
             googleID:14,
-            stkSymbol:`${this.stock}`,
-            shares:`${this.number}`,
+            stkSymbol:`${this.data.stock}`,
+            shares:`${this.inputNumber}`,
             purchaseCost:`${this.buyTotalCost}`
           }, {responseType:'text'}).subscribe((res)=>res);
         }
         else{
-          console.log("No purchase");
+          alert(`Not enough funds to purchase`)
         }
       });
     });

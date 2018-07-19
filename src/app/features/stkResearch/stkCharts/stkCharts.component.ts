@@ -13,20 +13,19 @@ export class stkChartsComponent implements OnInit {
 
   constructor(private _routing:stkRoutingServices) { }
 
-  chart = [];
-  symbol = ' ';
+  chart:any = [];
+  symbol:string = ' ';
   
   ngOnInit() {
     this._routing.symbolEmitter.subscribe(
       res=>{
         this.symbol = res;
-        console.log(this.symbol);
       });
   }
   
   
 
-  get1m(){
+  get1m():void{
     this._routing.getChart1m(this.symbol).subscribe(res=>{
       let results:any = [res];
       let close = results[0].map(res => res.close);
@@ -62,7 +61,7 @@ export class stkChartsComponent implements OnInit {
         });
   }
 
-  get3m(){
+  get3m():void{
     this._routing.getChart3m(this.symbol).subscribe(res=>{
       let results:any = [res];
       let close = results[0].map(res => res.close);
@@ -98,7 +97,7 @@ export class stkChartsComponent implements OnInit {
         });
   }
 
-  get1y(){
+  get1y():void{
     this._routing.getChart1y(this.symbol).subscribe(res=>{
       let results:any = [res];
       let close = results[0].map(res => res.close);
@@ -133,7 +132,7 @@ export class stkChartsComponent implements OnInit {
         });
   }
 
-  get5y(){
+  get5y():void{
     this._routing.getChart5y(this.symbol).subscribe(res=>{
       let results:any = [res];
       let close = results[0].map(res => res.close);

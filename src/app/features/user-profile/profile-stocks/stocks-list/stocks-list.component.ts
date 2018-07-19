@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { stkOwned } from '../../../../models/stkOwned.model';
+import { IStocksowned } from '../../../../models/IStocksowned';
 import { stkRoutingServices } from '../../../../services/stkRouting.services';
 import { Observable } from 'rxjs';
 
@@ -10,19 +10,18 @@ import { Observable } from 'rxjs';
 })
 export class StocksListComponent implements OnInit {
   
-  @Input() data;
-  stock;
-  equity:Number = 0;
-  value;
-  shares;
+  //Component Property
+  @Input() data:{stock:string,shares:number};
+  equity:Number;
+  value:number;
+
   constructor(private _routing:stkRoutingServices) { }
+  
   ngOnInit() {
-    this.stock = this.data.stock;
-    this.shares = this.data.shares;
-    Observable.interval(1000).timeInterval().flatMap(()=>this._routing.getPrice(this.stock))
+    Observable.interval(1000).timeInterval().flatMap(()=>this._routing.getPrice(this.data.stock))
     .subscribe((value)=>{
       this.value = value;
-      this.equity = this.value * this.shares;
+      this.equity = this.value * this.data.shares;
     });
   }
 }

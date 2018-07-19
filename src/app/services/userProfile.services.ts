@@ -1,8 +1,8 @@
 import { Injectable, EventEmitter } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IUser } from '../models/IUser';
-import { accountInfo } from '../models/accountInfo.model';
-import { stkOwned } from '../models/stkOwned.model';
+import { IAccountdetails } from '../models/IAccountdetails';
+import { IStocksowned } from '../models/IStocksowned';
 import { IWatchlist } from '../models/IWatchlist';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
@@ -11,33 +11,30 @@ import 'rxjs/add/operator/map';
 export class userProfileServices {
     constructor(private _httpClient:HttpClient){}
 
-    //Initializing the event emitter to use in user-profile component
+    //Event Emitters
     profileDetailsEmitter = new EventEmitter<IUser>();
-    accountInformationEmitter = new EventEmitter<accountInfo>();
-    stkOwnedEmitter = new EventEmitter<Object>();
+    accountInformationEmitter = new EventEmitter<IAccountdetails>();
+    stkOwnedEmitter = new EventEmitter<IStocksowned>();
     stkWatchlistEmitter = new EventEmitter<IWatchlist>();
 
-    //Methods to access the angularEndpoints configured at the backend
-    getProfileDetails(){
+    //Get methods for the service
+    //TODO: Get the logged in users profile data.
+    getProfileDetails(): Observable<IUser>{
         return this._httpClient.get<IUser>('http://localhost:3002/api/userData');
     }
 
-    getStkOwnedDetails(){
-        return this._httpClient.get<String>('http://localhost:3002/api/ownedData')
-        .map((result)=>{
-            return JSON.stringify(result);
-        });
+    //TODO: Get the user owned stock data
+    getStkOwnedDetails(): Observable<IStocksowned>{
+        return this._httpClient.get<IStocksowned>('http://localhost:3002/api/ownedData');
     }
 
-    getStkWatchlistDetails(){
+    //TODO: Get the user owned watchlist data
+    getStkWatchlistDetails(): Observable<IWatchlist>{
         return this._httpClient.get<IWatchlist>('http://localhost:3002/api/watchlistData');
-        // .map((result)=>{
-        //     return JSON.stringify(result);
-        // });
     }
 
+    //TODO: Get the user's account data
     getAccountDetails(){
-        return this._httpClient.get('http://localhost:3002/api/accountData')
-        .map(result => result);
+        return this._httpClient.get<IAccountdetails>('http://localhost:3002/api/accountData');
     }
 }

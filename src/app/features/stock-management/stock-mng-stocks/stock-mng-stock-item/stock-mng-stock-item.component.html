@@ -1,6 +1,6 @@
 <div class="manage-ownedStock-row">
-  <h3>{{stock | uppercase}}</h3>
-  <input [(ngModel)] = "number">
+  <h3>{{data.stock | uppercase}}</h3>
+  <input [(ngModel)] = "inputNumber">
   <button
   (click)="buyStock()"
   >

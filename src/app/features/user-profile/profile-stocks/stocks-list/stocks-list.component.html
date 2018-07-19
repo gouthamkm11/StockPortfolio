@@ -1,37 +1,6 @@
-<!-- <div class="mainDiv"> 
-    <div class="tableDiv">
-        <table class="tableDesign">
-            <tr>
-                <td >
-                    <div class="cellDiv">
-                        {{stock | uppercase}}
-                    </div>
-                </td>
-                <td>
-                    <div class="cellDiv">
-                        {{shares| uppercase}}
-                    </div>
-                </td>
-                <td>
-                    <div class="cellDiv">
-                        {{value | number : '1.2-2'}}
-                    </div>
-                </td>
-                <td>
-                    <div class="cellDiv">
-                        {{equity | number : '1.2-2'}}
-                    </div>
-                </td>
-            </tr>
-        </table>
-        <hr>
-    </div>
-</div> -->
-
-
 <div class="owned-stock-row">
-    <p>{{stock | uppercase}}</p>
-    <p>{{shares| uppercase}}</p>
+    <p>{{data.stock | uppercase}}</p>
+    <p>{{data.shares| uppercase}}</p>
     <p>{{value | number : '1.2-2'}}</p>
     <p>{{equity | number : '1.2-2'}}</p>
 </div>

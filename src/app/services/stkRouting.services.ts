@@ -13,7 +13,6 @@ export class stkRoutingServices {
     descriptionEmitter = new EventEmitter<string>();
     statsEmitter = new EventEmitter<IStat>();
     symbolEmitter = new EventEmitter<any>();
-    //event to emit equity values from stock component to account component
     equityEmitter = new EventEmitter<number>();
     
     
