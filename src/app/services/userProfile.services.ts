@@ -5,7 +5,7 @@ import { accountInfo } from '../models/accountInfo.model';
 import { stkOwned } from '../models/stkOwned.model';
 import { stkWathclist } from '../models/stkWatchlist.model';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class userProfileServices {

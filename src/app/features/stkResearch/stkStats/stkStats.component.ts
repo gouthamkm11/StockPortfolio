@@ -15,6 +15,8 @@ export class stkStatsComponent implements OnInit {
   stats:Object;
   close:number;
   open:number;
+  high:number;
+  low:number;
 
   ngOnInit() {
     this.stats = this._routing.statsEmitter.subscribe(
@@ -22,6 +24,8 @@ export class stkStatsComponent implements OnInit {
         this.stats = res;
         this.close = res.close.price;
         this.open = res.open.price;
+        this.high = res.high;
+        this.low = res.low;
         // console.log(this.stats);
         // console.log(this.close);
         // console.log(this.open);
