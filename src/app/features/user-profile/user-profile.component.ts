@@ -1,17 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { userProfileServices } from '../../services/userProfile.services';
-import { stkRoutingServices } from '../../services/stkRouting.services';
-import { IUser } from '../../models/IUser';
-import { IStocksowned } from '../../models/IStocksowned';
-import { IWatchlist } from '../../models/IWatchlist';
-import { IAccountdetails } from '../../models/IAccountdetails';
-import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css'],
-  providers: [userProfileServices, stkRoutingServices]
+  // providers: [userProfileServices, stkRoutingServices]
 })
 export class UserProfileComponent implements OnInit {
 

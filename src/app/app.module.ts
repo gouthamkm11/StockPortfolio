@@ -36,6 +36,10 @@ import { StockMngWatchlistItemComponent } from './features/stock-management/stoc
 import { StockMngStocksComponent } from './features/stock-management/stock-mng-stocks/stock-mng-stocks.component';
 import { StockMngStockItemComponent } from './features/stock-management/stock-mng-stocks/stock-mng-stock-item/stock-mng-stock-item.component';
 
+//Importing Services for the application
+import { stkRoutingServices } from "./services/stkRouting.services";
+import { userProfileServices } from "./services/userProfile.services";
+
 const appRoutes:Routes = [
   {path:'', redirectTo: '/userLogin', pathMatch:'full'},
   {path:'userProfile',component:UserProfileComponent},
@@ -77,7 +81,7 @@ const appRoutes:Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [stkRoutingServices,userProfileServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

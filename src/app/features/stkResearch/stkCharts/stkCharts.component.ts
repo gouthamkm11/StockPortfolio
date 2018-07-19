@@ -31,7 +31,6 @@ export class stkChartsComponent implements OnInit {
       let close = results[0].map(res => res.close);
       let date = results[0].map(res => res.date);
       this.chart.length = 0;
-      console.log(this.chart);
       this.chart = new Chart('canvas', {
         type: 'line',
         data: {
@@ -93,7 +92,6 @@ export class stkChartsComponent implements OnInit {
               }
             }
         })
-        console.log(this.chart);
         });
   }
 

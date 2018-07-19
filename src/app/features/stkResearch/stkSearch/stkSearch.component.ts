@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 //Service Class
 import { stkRoutingServices } from '../../../services/stkRouting.services';
 import { userProfileServices } from '../../../services/userProfile.services';
-import { Symbol } from 'rxjs';
 
 
 
@@ -33,12 +32,12 @@ export class stkSearchComponent implements OnInit {
   }
 
 
-  //List array property
+  //Variables for below method
   list;
   //This method gets triggered by "Add to Watchlist" button click
   addToWatchlist(){
     this._userProfileService.getStkWatchlistDetails().subscribe((res)=>{
-      this.list = res.stocks;
+      this.list = res.stocks.map((inputElement)=>inputElement);
       let stkArray=[];
       this.list.forEach(function(arrayItem){
         stkArray.push(arrayItem.stock);
@@ -56,17 +55,13 @@ export class stkSearchComponent implements OnInit {
   }
 
 
-  //input the stock symbol
-  //input the no of shares
-  ownedStkList;
-  stockList=[];//This has all the stocks the user owned.
+  //Variables for below method
   accDetails;//Get accound details and extract the buying power store it in value
   value:Object;
   inputShares:string;
   stkSymbol:string;
   stkValue;
   totalCost;
-  
   addToStocksOwned(){
     //Get the users buying power and Check for funds and allow purchase
     
