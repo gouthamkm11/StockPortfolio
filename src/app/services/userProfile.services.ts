@@ -1,9 +1,9 @@
 import { Injectable, EventEmitter } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { userProfile } from '../models/userProfile.model';
+import { IUser } from '../models/IUser';
 import { accountInfo } from '../models/accountInfo.model';
 import { stkOwned } from '../models/stkOwned.model';
-import { stkWathclist } from '../models/stkWatchlist.model';
+import { IWatchlist } from '../models/IWatchlist';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
@@ -12,15 +12,14 @@ export class userProfileServices {
     constructor(private _httpClient:HttpClient){}
 
     //Initializing the event emitter to use in user-profile component
-    profileDetailsEmitter = new EventEmitter<userProfile>();
+    profileDetailsEmitter = new EventEmitter<IUser>();
     accountInformationEmitter = new EventEmitter<accountInfo>();
     stkOwnedEmitter = new EventEmitter<Object>();
-    stkWatchlistEmitter = new EventEmitter<Object>();
+    stkWatchlistEmitter = new EventEmitter<IWatchlist>();
 
     //Methods to access the angularEndpoints configured at the backend
     getProfileDetails(){
-        return this._httpClient.get('http://localhost:3002/api/userData')
-        .map(result=>result);
+        return this._httpClient.get<IUser>('http://localhost:3002/api/userData');
     }
 
     getStkOwnedDetails(){
@@ -31,10 +30,10 @@ export class userProfileServices {
     }
 
     getStkWatchlistDetails(){
-        return this._httpClient.get<string>('http://localhost:3002/api/watchlistData')
-        .map((result)=>{
-            return JSON.stringify(result);
-        });
+        return this._httpClient.get<IWatchlist>('http://localhost:3002/api/watchlistData');
+        // .map((result)=>{
+        //     return JSON.stringify(result);
+        // });
     }
 
     getAccountDetails(){

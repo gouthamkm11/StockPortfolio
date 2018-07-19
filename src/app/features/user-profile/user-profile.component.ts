@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { userProfileServices } from '../../services/userProfile.services';
 import { stkRoutingServices } from '../../services/stkRouting.services';
-import { userProfile } from '../../models/userProfile.model';
+import { IUser } from '../../models/IUser';
 import { stkOwned } from '../../models/stkOwned.model';
-import { stkWathclist } from '../../models/stkWatchlist.model';
+import { IWatchlist } from '../../models/IWatchlist';
 import { accountInfo } from '../../models/accountInfo.model';
 import { Observable } from "rxjs";
 
@@ -19,7 +19,7 @@ export class UserProfileComponent implements OnInit {
 
   //Below two will get the profile details
   userDetails;
-  userProfileDetails;//This model has current users details
+  userProfileDetails:IUser;//This model has current users details
 
   //Below two will get the account details
   userStocks;
@@ -36,18 +36,19 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
     //This method will fetch profile data from mongoDB
     this.routing.getProfileDetails().subscribe((res)=>{
-      this.userDetails = res;
-      console.log(`User profile root component ${this.userDetails.profilePic}`);
-      this.userProfileDetails = new userProfile(this.userDetails.username,this.userDetails.profilePic,this.userDetails.gender);
-      this.routing.profileDetailsEmitter.emit(this.userProfileDetails);
+      this.routing.profileDetailsEmitter.emit(res);
+      // this.userDetails = res;
+      // console.log(`User profile root component ${this.userDetails.profilePic}`);
+      // this.userProfileDetails = new userProfile(this.userDetails.username,this.userDetails.profilePic,this.userDetails.gender);      
     });
     
     //This method will fetch stocks in watchlist by user from mongoDB
     this.routing.getStkWatchlistDetails().subscribe((res)=>{
-      this.userWatchlist = JSON.parse(res);
-      console.log(`user's watchlist details${this.userWatchlist.stocks}`);
-      this.userWathcliststkDetails = new stkWathclist(this.userWatchlist.stocks);
-      this.routing.stkWatchlistEmitter.emit(this.userWathcliststkDetails);
+      this.routing.stkWatchlistEmitter.emit(res);
+      // this.userWatchlist = JSON.parse(res);
+      // console.log(`user's watchlist details${this.userWatchlist.stocks}`);
+      // this.userWathcliststkDetails = new stkWathclist(this.userWatchlist.stocks);
+      // this.routing.stkWatchlistEmitter.emit(this.userWathcliststkDetails);
     });
 
     //This method will fetch stocks owned by user from mongoDB

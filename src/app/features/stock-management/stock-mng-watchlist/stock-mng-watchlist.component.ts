@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { userProfileServices } from '../../../services/userProfile.services';
+import { IWatchlist } from '../../../models/IWatchlist';
 
 @Component({
   selector: 'app-stock-mng-watchlist',
@@ -10,18 +11,16 @@ export class StockMngWatchlistComponent implements OnInit {
 
   constructor(private _userProfileServices:userProfileServices) { }
 
-  stkList=[];
+  stkList:Array<{stock:string}>[]=[];
   ngOnInit() {
     this._userProfileServices.getStkWatchlistDetails().subscribe((res)=>{
-      let ans = JSON.parse(res);
-      this.stkList = ans.stocks;
+      this.stkList = res.stocks
     })
   }
 
   reRender(event): void{
     this._userProfileServices.getStkWatchlistDetails().subscribe((res)=>{
-      let ans = JSON.parse(res);
-      this.stkList = ans.stocks;
+      this.stkList = res.stocks;
     })
   }
 

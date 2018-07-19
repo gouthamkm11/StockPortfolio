@@ -4,8 +4,6 @@ import { HttpClient } from '@angular/common/http';
 //Service Class
 import { stkRoutingServices } from '../../../services/stkRouting.services';
 import { userProfileServices } from '../../../services/userProfile.services';
-//stock Watchlist Models
-import { stkWathclist } from '../../../models/stkWatchlist.model';
 import { Symbol } from 'rxjs';
 
 
@@ -43,8 +41,7 @@ export class stkSearchComponent implements OnInit {
 
   initialList;
   addToWatchlist(){
-    this._userProfileService.getStkWatchlistDetails().subscribe((symbol)=>{
-      let res = JSON.parse(symbol);
+    this._userProfileService.getStkWatchlistDetails().subscribe((res)=>{
       this.list = res.stocks;
       // this.watchlistSymbols = this.list.stocks;
       let stkArray=[];

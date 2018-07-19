@@ -1,8 +1,10 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { stkWathclist } from '../../../../models/stkWatchlist.model';
+import { Component, OnInit, Input } from '@angular/core';
+
+//Importing service
 import { stkRoutingServices }  from '../../../../services/stkRouting.services'
+
+//Importing observable for implementing timed triggers to service call
 import { Observable } from 'rxjs';
-import { Http } from "@angular/http";
 
 
 @Component({
@@ -14,14 +16,16 @@ export class WatchlistItemComponent implements OnInit {
 
   constructor(private _routing:stkRoutingServices) { }
 
-  @Input() data;
+  //Component property
+  @Input() data:{stock:string};
+  currentPrice:number;
+  symbol:string;
 
-  currentPrice;
-  symbol;
 
+  //Component Initialization Method
   ngOnInit() {
     this.symbol = this.data.stock;
-      Observable.interval(1000).timeInterval()
+    Observable.interval(1000).timeInterval()
     .flatMap(()=>this._routing.getPrice(this.data.stock))
     .subscribe((value)=>this.currentPrice=value);
   }

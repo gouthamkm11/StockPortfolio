@@ -1,51 +1,55 @@
 import { Injectable, EventEmitter } from "@angular/core";
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { IStat } from '../models/IStat';
+import { IChart } from '../models/Ichart';
 import 'rxjs/add/operator/map'
 
 @Injectable()
 export class stkRoutingServices {
     constructor(private _httpClient:HttpClient){}
     
-    descriptionEmitter = new EventEmitter<Object>();
-    statsEmitter = new EventEmitter<Object>();
-    symbolEmitter = new EventEmitter<string>();
+    //Event Emitters
+    descriptionEmitter = new EventEmitter<string>();
+    statsEmitter = new EventEmitter<IStat>();
+    symbolEmitter = new EventEmitter<any>();
     //event to emit equity values from stock component to account component
-    equityEmitter = new EventEmitter<Number>();
+    equityEmitter = new EventEmitter<number>();
     
-    getStkAbout(symbol): Observable<string>{
+    
+    //Get methods for the service
+    //TODO: Get the symbol's description
+    getStkAbout(symbol:string): Observable<string>{
         return this._httpClient.get<string>(`https://api.iextrading.com/1.0/stock/${symbol}/company?filter=description`);
-        // .map(result => result);
     }
 
-    getStkStats(symbol){
-        return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/ohlc`)
-        .map(result => result);
-        // return this._httpClient.get(`http://127.0.0.1:3001/api/ohlc/${symbol}`)
+    //TODO: Get the symbol's stock price.
+    getPrice(symbol:string): Observable<number>{
+        return this._httpClient.get<number>(`https://api.iextrading.com/1.0/stock/${symbol}/price`)
     }
 
-    getChart1m(symbol){
-        return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/chart`)
-        .map(res => res);
+    //TODO: Get the symbol's OHLC data
+    getStkStats(symbol:string): Observable<IStat>{
+        return this._httpClient.get<IStat>(`https://api.iextrading.com/1.0/stock/${symbol}/ohlc`);
     }
 
-    getChart3m(symbol){
-        return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/chart/3m`)
-        .map(res => res);
+    //TODO: Get the symbol's 1month chart data
+    getChart1m(symbol:string):Observable<IChart[]>{
+        return this._httpClient.get<IChart[]>(`https://api.iextrading.com/1.0/stock/${symbol}/chart`)
     }
 
-    getChart1y(symbol){
-        return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/chart/1y`)
-        .map(res => res);
+    //TODO: Get the symbol's 3months chart data
+    getChart3m(symbol:string):Observable<IChart[]>{
+        return this._httpClient.get<IChart[]>(`https://api.iextrading.com/1.0/stock/${symbol}/chart/3m`)
     }
 
-    getChart5y(symbol){
-        return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/chart/5y`)
-        .map(res => res);
+    //TODO: Get the symbol's 1year chart data
+    getChart1y(symbol:string):Observable<IChart[]>{
+        return this._httpClient.get<IChart[]>(`https://api.iextrading.com/1.0/stock/${symbol}/chart/1y`)
     }
 
-    getPrice(symbol){
-        return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/price`)
-        .map(res => res);
+    //TODO: Get the symbol's 5years chart data
+    getChart5y(symbol:string):Observable<IChart[]>{
+        return this._httpClient.get<IChart[]>(`https://api.iextrading.com/1.0/stock/${symbol}/chart/5y`)
     }
 }

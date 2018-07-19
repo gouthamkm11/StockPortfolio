@@ -1,12 +1,12 @@
 <div class="profile-details-container">
   <div class="profile-picture">
-    <img [src]="profilePic || ''" alt="profile Pic">
+    <img [src]="profileData.profilePic" alt="profile Pic">
   </div>
   <div class="profile-user-details">
     <h3>Name</h3>
-    <h4>{{lastName | uppercase}}</h4>
+    <h4>{{profileData.username | uppercase}}</h4>
     <h3>Gender</h3>
-    <h4>{{gender | uppercase}}</h4>
+    <h4>{{profileData.gender | uppercase}}</h4>
     <h3>Buying Power</h3>
     <h4>10</h4>
   </div>
