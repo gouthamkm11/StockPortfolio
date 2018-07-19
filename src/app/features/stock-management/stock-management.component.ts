@@ -13,6 +13,7 @@ export class StockManagementComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

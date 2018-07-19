@@ -3,7 +3,9 @@
   <app-stock-mng-watchlist-item
   *ngFor= "let item of stkList"
   [data] = "item"
-  (stkSymbol)="removeItem($event)"
+  (renderComp)="reRender($event)"
   >
   </app-stock-mng-watchlist-item>
 </div>
+
+

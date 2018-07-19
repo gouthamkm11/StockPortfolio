@@ -18,6 +18,7 @@ export class stkAboutComponent implements OnInit{
                 this.description = res.description;
                 console.log(this.description);
              })
+        this.description = 'Data to be displayed';
     }
 }
 

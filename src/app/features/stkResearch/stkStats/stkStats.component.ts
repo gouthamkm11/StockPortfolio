@@ -12,7 +12,7 @@ export class stkStatsComponent implements OnInit {
   constructor(private _routing:stkRoutingServices) { }
   
   //Component properties
-  stats:Object;
+  stats:object;
   close:number;
   open:number;
   high:number;
@@ -26,9 +26,6 @@ export class stkStatsComponent implements OnInit {
         this.open = res.open.price;
         this.high = res.high;
         this.low = res.low;
-        // console.log(this.stats);
-        // console.log(this.close);
-        // console.log(this.open);
       }
     )
   }

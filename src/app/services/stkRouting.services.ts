@@ -1,5 +1,6 @@
 import { Injectable, EventEmitter } from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 
 @Injectable()
@@ -12,9 +13,9 @@ export class stkRoutingServices {
     //event to emit equity values from stock component to account component
     equityEmitter = new EventEmitter<Number>();
     
-    getStkAbout(symbol){
-        return this._httpClient.get(`https://api.iextrading.com/1.0/stock/${symbol}/company?filter=description`)
-        .map(result => result);
+    getStkAbout(symbol): Observable<string>{
+        return this._httpClient.get<string>(`https://api.iextrading.com/1.0/stock/${symbol}/company?filter=description`);
+        // .map(result => result);
     }
 
     getStkStats(symbol){

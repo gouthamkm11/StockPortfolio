@@ -18,6 +18,14 @@ export class StockMngWatchlistComponent implements OnInit {
     })
   }
 
+  reRender(event): void{
+    this._userProfileServices.getStkWatchlistDetails().subscribe((res)=>{
+      let ans = JSON.parse(res);
+      this.stkList = ans.stocks;
+    })
+  }
+
+
   // removeItem(value:EventListener<any>){
   //   console.log(`eeeee${value}`);
   // }

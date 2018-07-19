@@ -15,6 +15,7 @@ export class StockMngWatchlistItemComponent implements OnInit {
 
   @Input() data;
   @Output() stkSymbol = new EventEmitter<any>();
+  @Output() renderComp = new EventEmitter<string>();
 
   currentPrice;
   symbol;
@@ -28,6 +29,7 @@ export class StockMngWatchlistItemComponent implements OnInit {
 
   removeStock(){
     this.stkSymbol = this.symbol;
+    this.renderComp.emit('reRender');
     this._http.post('http://localhost:3002/api/removeStocks/',{
               googleID:14,
               stock:`${this.symbol}`
